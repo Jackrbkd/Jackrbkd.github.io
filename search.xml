@@ -70,22 +70,11 @@
 <p>●高级语言的翻译工具</p>
 <p>●etc</p>
 ]]></content>
-      <tags>
-        <tag>编译技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建指南</title>
-    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
-<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
-<p>这样就可以大概搭建出一个博客的雏形了。</p>
-]]></content>
       <categories>
-        <category>cs</category>
+        <category>study</category>
       </categories>
       <tags>
-        <tag>日常知识</tag>
+        <tag>编译技术</tag>
       </tags>
   </entry>
   <entry>
@@ -135,6 +124,20 @@
       </categories>
       <tags>
         <tag>生活感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建指南</title>
+    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
+<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
+<p>这样就可以大概搭建出一个博客的雏形了。</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>日常知识</tag>
       </tags>
   </entry>
 </search>
