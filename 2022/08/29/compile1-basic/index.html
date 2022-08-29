@@ -28,7 +28,7 @@
 <meta property="og:description" content="源程序—&gt;目标程序：翻译程序翻译程序：汇编程序&#x2F;编译程序 汇编程序：汇编语言—&gt;机器语言，此时翻译程序称之为汇编程序，翻译过程称之为“汇编” 编译程序：高级语言—&gt;目标程序，此时翻译过程称之为“编译” 解释程序：对源程序进行解释执行的程序一般来说，从源程序到输出最终的结果有三种路径。 FirstPath : 源程序经过翻译程序转换为目标程序；数据输入到目标程序+运行时库程序，获得">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-29T01:49:47.000Z">
-<meta property="article:modified_time" content="2022-08-29T03:55:02.527Z">
+<meta property="article:modified_time" content="2022-08-29T06:55:26.082Z">
 <meta property="article:author" content="Jackrbkd">
 <meta property="article:tag" content="编译技术">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-08-29 09:49:47 / 修改时间：11:55:02" itemprop="dateCreated datePublished" datetime="2022-08-29T09:49:47+08:00">2022-08-29</time>
+              <time title="创建时间：2022-08-29 09:49:47 / 修改时间：14:55:26" itemprop="dateCreated datePublished" datetime="2022-08-29T09:49:47+08:00">2022-08-29</time>
             </span>
 
           
@@ -241,7 +241,7 @@
 <p>SecondPath：将数据和源程序都输入到解释程序中，获得输出</p>
 <p>ThirdPath：源程序通过编译程序转换为源程序的中间形式；之后将数据和源程序的中间形式作为输入，获得输出</p>
 <h1 id="编译过程：将高级语言程序翻译为语义等价的目标程序的过程"><a href="#编译过程：将高级语言程序翻译为语义等价的目标程序的过程" class="headerlink" title="编译过程：将高级语言程序翻译为语义等价的目标程序的过程"></a>编译过程：将高级语言程序翻译为语义等价的目标程序的过程</h1><p>●五个基本阶段：词法分析—&gt;语法分析—&gt;语义分析、生成中间代码—&gt;代码优化—&gt;生成目标程序</p>
-<h3 id="1-词法分析：分析和识别单词"><a href="#1-词法分析：分析和识别单词" class="headerlink" title="1.词法分析：分析和识别单词"></a>1.词法分析：分析和识别单词</h3><p>●单词：是语言的基本语法单位，一般语言有四大类单词</p>
+<h2 id="词法分析：分析和识别单词"><a href="#词法分析：分析和识别单词" class="headerlink" title="词法分析：分析和识别单词"></a>词法分析：分析和识别单词</h2><p>●单词：是语言的基本语法单位，一般语言有四大类单词</p>
 <pre><code>&lt;1&gt;语言定义的关键字或保留字（如BEGIN、END、IF）
 
 &lt;2&gt;标识符
@@ -249,20 +249,20 @@
 &lt;3&gt;常数
 
 &lt;4&gt;分界符（运算符） （如+、-、*、/、;、（、） ……）
-</code></pre><h3 id="2-语法分析"><a href="#2-语法分析" class="headerlink" title="2.语法分析"></a>2.语法分析</h3><p>●根据语法规则（即语言的文法），分析并识别出各种语法成分，如表达式、各种说明、各种语句、过程、函数等，</p>
+</code></pre><h2 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h2><p>●根据语法规则（即语言的文法），分析并识别出各种语法成分，如表达式、各种说明、各种语句、过程、函数等，</p>
 <pre><code>并进行语法正确性检查。
-</code></pre><h3 id="3-语义分析、生成中间代码"><a href="#3-语义分析、生成中间代码" class="headerlink" title="3.语义分析、生成中间代码"></a>3.语义分析、生成中间代码</h3><p>●对识别出的各种语法成分进行语义分析，并产生相应的中间代码</p>
+</code></pre><h2 id="语义分析、生成中间代码"><a href="#语义分析、生成中间代码" class="headerlink" title="语义分析、生成中间代码"></a>语义分析、生成中间代码</h2><p>●对识别出的各种语法成分进行语义分析，并产生相应的中间代码</p>
 <p>●中间代码：一种介于源语言和目标语言之间的中间语言形式</p>
 <pre><code>目的：便于做优化处理；便于编译程序的移植
 
 形式：四元式、三元式、逆波兰表示
 
 四元式（三地址指令）：？
-</code></pre><h2 id="4-代码优化：得到高质量的目标程序"><a href="#4-代码优化：得到高质量的目标程序" class="headerlink" title="4.代码优化：得到高质量的目标程序"></a>4.代码优化：得到高质量的目标程序</h2><h2 id="5-生成目标程序-保持语义等价性"><a href="#5-生成目标程序-保持语义等价性" class="headerlink" title="5.生成目标程序(保持语义等价性)"></a>5.生成目标程序(保持语义等价性)</h2><p>●由中间代码很容易生成目标程序（地址指令序列）。</p>
+</code></pre><h2 id="代码优化：得到高质量的目标程序"><a href="#代码优化：得到高质量的目标程序" class="headerlink" title="代码优化：得到高质量的目标程序"></a>代码优化：得到高质量的目标程序</h2><h2 id="生成目标程序-保持语义等价性"><a href="#生成目标程序-保持语义等价性" class="headerlink" title="生成目标程序(保持语义等价性)"></a>生成目标程序(保持语义等价性)</h2><p>●由中间代码很容易生成目标程序（地址指令序列）。</p>
 <pre><code>这部分工作与机器关系密切 ，所以要根据机器进行。
 
 在做这部分工作时（要注意充分利用目标机特性），也可以进行优化处理。
-</code></pre><h1 id="编译程序构造"><a href="#编译程序构造" class="headerlink" title="编译程序构造"></a>编译程序构造</h1><h2 id="1-编译程序的逻辑结构"><a href="#1-编译程序的逻辑结构" class="headerlink" title="1.编译程序的逻辑结构"></a>1.编译程序的逻辑结构</h2><p>●按逻辑功能不同，可将编译过程划分为五个基本阶段，与此相对应，我们将实现整个编译过程的编译程序划分为五个逻辑阶段（即五个逻辑子过程）。</p>
+</code></pre><h1 id="编译程序构造"><a href="#编译程序构造" class="headerlink" title="编译程序构造"></a>编译程序构造</h1><h2 id="编译程序的逻辑结构"><a href="#编译程序的逻辑结构" class="headerlink" title="编译程序的逻辑结构"></a>编译程序的逻辑结构</h2><p>●按逻辑功能不同，可将编译过程划分为五个基本阶段，与此相对应，我们将实现整个编译过程的编译程序划分为五个逻辑阶段（即五个逻辑子过程）。</p>
 <p>●在上面五个阶段中都要做两件事：建表和查表；出错处理</p>
 <p>●符号表管理</p>
 <pre><code>及时地把源程序中的信息和编译过程中产生的信息记在表格中，在随后的编译过程中要不断查找这些表格中的信息。
@@ -380,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A8%8B%E5%BA%8F%E2%80%94-gt-%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F%EF%BC%9A%E7%BF%BB%E8%AF%91%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">源程序—&gt;目标程序：翻译程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E7%A8%8B%E5%BA%8F%EF%BC%9A%E5%AF%B9%E6%BA%90%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">解释程序：对源程序进行解释执行的程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%EF%BC%9A%E5%B0%86%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E7%BF%BB%E8%AF%91%E4%B8%BA%E8%AF%AD%E4%B9%89%E7%AD%89%E4%BB%B7%E7%9A%84%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">编译过程：将高级语言程序翻译为语义等价的目标程序的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%9A%E5%88%86%E6%9E%90%E5%92%8C%E8%AF%86%E5%88%AB%E5%8D%95%E8%AF%8D"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.词法分析：分析和识别单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.语法分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90%E3%80%81%E7%94%9F%E6%88%90%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.语义分析、生成中间代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96%EF%BC%9A%E5%BE%97%E5%88%B0%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">4.代码优化：得到高质量的目标程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%94%9F%E6%88%90%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F-%E4%BF%9D%E6%8C%81%E8%AF%AD%E4%B9%89%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">5.生成目标程序(保持语义等价性)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E6%9E%84%E9%80%A0"><span class="nav-number">4.</span> <span class="nav-text">编译程序构造</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="nav-number">4.1.</span> <span class="nav-text">1.编译程序的逻辑结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%8D"><span class="nav-number">5.</span> <span class="nav-text">遍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8Dvs%E5%9F%BA%E6%9C%AC%E9%98%B6%E6%AE%B5"><span class="nav-number">5.1.</span> <span class="nav-text">遍vs基本阶段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF"><span class="nav-number">6.</span> <span class="nav-text">前端和后端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%89%8D%E5%90%8E%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">编译程序的前后处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">编译技术的应用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A8%8B%E5%BA%8F%E2%80%94-gt-%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F%EF%BC%9A%E7%BF%BB%E8%AF%91%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">源程序—&gt;目标程序：翻译程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E7%A8%8B%E5%BA%8F%EF%BC%9A%E5%AF%B9%E6%BA%90%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">解释程序：对源程序进行解释执行的程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%EF%BC%9A%E5%B0%86%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E7%BF%BB%E8%AF%91%E4%B8%BA%E8%AF%AD%E4%B9%89%E7%AD%89%E4%BB%B7%E7%9A%84%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">编译过程：将高级语言程序翻译为语义等价的目标程序的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%9A%E5%88%86%E6%9E%90%E5%92%8C%E8%AF%86%E5%88%AB%E5%8D%95%E8%AF%8D"><span class="nav-number">3.1.</span> <span class="nav-text">词法分析：分析和识别单词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">3.2.</span> <span class="nav-text">语法分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90%E3%80%81%E7%94%9F%E6%88%90%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81"><span class="nav-number">3.3.</span> <span class="nav-text">语义分析、生成中间代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96%EF%BC%9A%E5%BE%97%E5%88%B0%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.4.</span> <span class="nav-text">代码优化：得到高质量的目标程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F-%E4%BF%9D%E6%8C%81%E8%AF%AD%E4%B9%89%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">3.5.</span> <span class="nav-text">生成目标程序(保持语义等价性)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E6%9E%84%E9%80%A0"><span class="nav-number">4.</span> <span class="nav-text">编译程序构造</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="nav-number">4.1.</span> <span class="nav-text">编译程序的逻辑结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%8D"><span class="nav-number">5.</span> <span class="nav-text">遍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8Dvs%E5%9F%BA%E6%9C%AC%E9%98%B6%E6%AE%B5"><span class="nav-number">5.1.</span> <span class="nav-text">遍vs基本阶段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF"><span class="nav-number">6.</span> <span class="nav-text">前端和后端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%89%8D%E5%90%8E%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">编译程序的前后处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">编译技术的应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
