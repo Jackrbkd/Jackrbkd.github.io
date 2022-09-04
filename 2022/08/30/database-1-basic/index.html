@@ -28,7 +28,7 @@
 <meta property="og:description" content="数据管理技术的发展人工管理阶段● 时间：20世纪50年代以前 ● 背景： ​    - 外存仅磁带、卡片、纸带，没有磁盘等直接存取设备 ​    - 没有操作系统和数据管理软件，用户用机器指令编码 ​    - 计算机主要用于科学计算 ● 特点： ​    - 数据不在计算机上保存 ​    - 没有软件系统对数据进行管理，程序规定数据的逻辑结构和物理结构，数据和程序不具有独立性 ​    - 基">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T12:00:03.000Z">
-<meta property="article:modified_time" content="2022-08-30T12:26:10.590Z">
+<meta property="article:modified_time" content="2022-09-02T08:04:16.073Z">
 <meta property="article:author" content="Jackrbkd">
 <meta property="article:tag" content="数据库系统原理">
 <meta name="twitter:card" content="summary">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-30 20:00:03 / 修改时间：20:26:10" itemprop="dateCreated datePublished" datetime="2022-08-30T20:00:03+08:00">2022-08-30</time>
+              <time title="创建时间：2022-08-30 20:00:03" itemprop="dateCreated datePublished" datetime="2022-08-30T20:00:03+08:00">2022-08-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 16:04:16" itemprop="dateModified" datetime="2022-09-02T16:04:16+08:00">2022-09-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -268,7 +274,63 @@
 <p>​    - 容易造成数据的不一致性</p>
 <p>​    - 数据维护难度大</p>
 <p>​    - 程序维护工作量大</p>
-<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><h1 id="数据库系统结构"><a href="#数据库系统结构" class="headerlink" title="数据库系统结构"></a>数据库系统结构</h1>
+<h2 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h2><p>● 数据库技术要解决的基本问题</p>
+<p><em>集成</em>数据的表示</p>
+<p>统一管理下的数据<em>共享</em></p>
+<p>● 解决基本问题的核心技术</p>
+<p>数据模型</p>
+<p>数据独立性 —&gt; 共享</p>
+<p>● 面向全组织的复杂的数据结构</p>
+<p>在描述数据时，不仅描述数据本身，还要描述数据之间的联系，使整个组织的数据结构化</p>
+<p>数据结构化是数据库的主要特征之一，是数据库和文件系统的根本区别。</p>
+<p>● 数据冗余度小，易扩充</p>
+<p>● 具有较高的数据和程序的独立性</p>
+<p>数据独立性：</p>
+<p>数据的物理独立性：数据的存储结构(物理结构)改变时，数据的逻辑结构可以不变，从而应用程序也不必改变</p>
+<p>数据的逻辑独立性：数据的逻辑结构改变时，应用程序可以不变</p>
+<p>● 统一的数据控制功能</p>
+<p>数据的安全性控制：</p>
+<p>保护数据以防止不合法的使用所造成数据的泄密和破坏</p>
+<p>数据的完整性控制：</p>
+<p>指数据的正确性和相容性(一致)</p>
+<p>并发控制：</p>
+<p>● 数据模型用来抽象和表示现实世界中的数据和信息：</p>
+<p>描述对象</p>
+<p>描述与表示的目标</p>
+<p>现实世界业务 —&gt;(数据的认识、抽象) 信息世界信息(概念模型)    </p>
+<!--概念模型：又称信息模型，用于信息世界建模，是现实世界到信息世界的持续，是用户和数据库设计人员继续交流的语言-->
+<p>信息世界信息(概念模型) —&gt;(转换) 机器世界数据(数据模型)</p>
+<!--数据模型用于机器世界，按计算机系统的观点对数据建模，如层次、网状、关系模型-->
+<p>概念模型基于信息世界的主要概念，表达应用中的各种语义；</p>
+<p>具有较强的语义表达能力，能够方便、直接表达应用中的各种语义</p>
+<p>概念模型应该简单、清晰、易于理解</p>
+<p>概念模型最常用的表示方法：实体-联系方法(E-R法)</p>
+<p>实体(Entity)：客观存在并可相互区分的食物</p>
+<p>属性(Attribute)：客体所具有的某一特性</p>
+<p>码(Key)：唯一标识实体的<em>属性</em>集</p>
+<p>域(Domain)：某个(些)属性的取值范围</p>
+<p>实体型(Entity Type)：表示一类实体，用实体名及其属性名集合来抽象、刻画</p>
+<p>联系(Relation)：实体型之间的联系，是实体之间的相互关联</p>
+<p>名称</p>
+<p>类型：</p>
+<p>​    一对一联系(1:1)</p>
+<p>​    一对多联系(1:n)</p>
+<p>​    多对多联系(m:n)</p>
+<p>可以具有属性</p>
+<p>E-R图的组成：实体、联系、属性</p>
+<p>实体：长方形，框内写实体名</p>
+<p>属性：椭圆形，<em>无向边</em>连接实体和属性(码：一个属性的时候，在属性名下划线；多个属性时，弧线连接<em>无向边</em>，在上面标注”\\“)</p>
+<p>联系：菱形表示实体间的联系，菱形框内写上联系名。用无向边</p>
+<p>同一个实体集内部个实体之间也可以存在一对一、一对多、多对多的联系。</p>
+<p>三个或多个实体型间可能存在某种联系</p>
+<p>存在依赖：</p>
+<p>子女实体存在依赖于职工实体的存在，则称子女实体是弱实体</p>
+<p>标识依赖：</p>
+<p>如果实体不能由它自己的属性来唯一标识，而必须通过与它相联系的另一实体一起来标识，那么称该实体标识依赖于另一个实体</p>
+<p>实体的子集：</p>
+<p>子类可继承父类的属性，子类也可以附加某些实现</p>
+<p>子类之间的交不一定为空</p>
+
     </div>
 
     
@@ -289,7 +351,10 @@
     <a href="/2022/08/30/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%90%84%E9%97%A8%E5%AD%A6%E7%A7%91%E8%80%83%E6%A0%B8%E8%A6%81%E6%B1%82/" rel="prev" title="大三上各门学科考核要求">
       <i class="fa fa-chevron-left"></i> 大三上各门学科考核要求
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/31/formal-language-1/" rel="next" title="formal_language-1">
+      formal_language-1 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -349,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">1.</span> <span class="nav-text">数据管理技术的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E7%AE%A1%E7%90%86%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.</span> <span class="nav-text">人工管理阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">文件系统阶段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">数据库系统结构</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">1.</span> <span class="nav-text">数据管理技术的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E7%AE%A1%E7%90%86%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.</span> <span class="nav-text">人工管理阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">数据库系统阶段</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,20 +430,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

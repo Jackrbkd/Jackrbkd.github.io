@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="动态内存分配 malloc&#x2F;free，堆栈 stack&#x2F;heap 函数指针 pfn ， bsearch，qsort struct :  对齐特性：按照最大对齐，可通过#pragma pack(n)修改 macro">
+  <meta name="description" content="动态内存分配 malloc&#x2F;free，堆栈 stack&#x2F;heap 函数指针 pfn ， bsearch，qsort 结构体对齐问题● 对齐特性：按照最大对齐，可通过#pragma pack(n)修改 123456789101112131415161718192021struct Test &amp;#123;   int i;   double j;   int k;&amp;#125;;size:24&#x2F;&#x2F;&#x2F;&#x2F;s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cpp-1">
 <meta property="og:url" content="http://example.com/2022/08/30/cpp-1/index.html">
 <meta property="og:site_name" content="Jackrbkd &amp; 博客小屋">
-<meta property="og:description" content="动态内存分配 malloc&#x2F;free，堆栈 stack&#x2F;heap 函数指针 pfn ， bsearch，qsort struct :  对齐特性：按照最大对齐，可通过#pragma pack(n)修改 macro">
+<meta property="og:description" content="动态内存分配 malloc&#x2F;free，堆栈 stack&#x2F;heap 函数指针 pfn ， bsearch，qsort 结构体对齐问题● 对齐特性：按照最大对齐，可通过#pragma pack(n)修改 123456789101112131415161718192021struct Test &amp;#123;   int i;   double j;   int k;&amp;#125;;size:24&#x2F;&#x2F;&#x2F;&#x2F;s">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T08:22:41.000Z">
-<meta property="article:modified_time" content="2022-08-30T11:23:16.466Z">
+<meta property="article:modified_time" content="2022-08-31T13:52:43.471Z">
 <meta property="article:author" content="Jackrbkd">
 <meta property="article:tag" content="cpp">
 <meta name="twitter:card" content="summary">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-30 16:22:41 / 修改时间：19:23:16" itemprop="dateCreated datePublished" datetime="2022-08-30T16:22:41+08:00">2022-08-30</time>
+              <time title="创建时间：2022-08-30 16:22:41" itemprop="dateCreated datePublished" datetime="2022-08-30T16:22:41+08:00">2022-08-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-31 21:52:43" itemprop="dateModified" datetime="2022-08-31T21:52:43+08:00">2022-08-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -244,9 +250,36 @@
       
         <p>动态内存分配 malloc/free，堆栈 stack/heap</p>
 <p>函数指针 pfn ， bsearch，qsort</p>
-<p>struct : </p>
-<pre><code>对齐特性：按照最大对齐，可通过#pragma pack(n)修改
-</code></pre><p>macro</p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><h2 id="对齐问题"><a href="#对齐问题" class="headerlink" title="对齐问题"></a>对齐问题</h2><p>● 对齐特性：按照最大对齐，可通过#pragma pack(n)修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">24</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> pack(1) <span class="comment">/*意思是将一个字节作为最小限制单位，即无气泡*/</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br></pre></td></tr></table></figure>
+<h2 id="位域"><a href="#位域" class="headerlink" title="位域"></a>位域</h2><p>● 有些信息在存储时，并不需要占用一个完整的字节，而只需占几个二进制位(如“开关”)。c语言为此提供了一个数据结构，称为“位域”/“位段”。</p>
+<p>● “位域”是把一个字节中的二进制位划分为几个不同的区域，并说明每个区域的位数。每个域有一个域名，允许在程序中按照域名进行操作。</p>
+<h3 id="●-位域的定义和结构变量的说明"><a href="#●-位域的定义和结构变量的说明" class="headerlink" title="● 位域的定义和结构变量的说明"></a>● 位域的定义和结构变量的说明</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> 位域结构名</span><br><span class="line">&#123;</span><br><span class="line">    位域列表 <span class="comment">/* type [member_name] : width ; */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其中，</p>
+<p>​    type只能为int，unsigned int，signed int三种类型。 <!--char好像也行？--></p>
+<p>​    member_name是位域的名称</p>
+<p>​    width是位域中位的数量，宽度必须小于或等于<em>指定类型</em>的位宽度</p>
+<h3 id="●-一些说明"><a href="#●-一些说明" class="headerlink" title="● 一些说明"></a>● 一些说明</h3><p>◇ 一个位域存储在同一个字节中，如果一个字节所剩空间不够存放另一位域时，会从下一单元起存放位域，也可以有意使位域从下一单元开始，如使用空域 </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">bs</span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> a:<span class="number">4</span>;</span><br><span class="line">    <span class="type">unsigned</span>  :<span class="number">4</span>;    <span class="comment">/* 空域 */</span></span><br><span class="line">    <span class="type">unsigned</span> b:<span class="number">4</span>;    <span class="comment">/* 从下一单元开始存放 */</span></span><br><span class="line">    <span class="type">unsigned</span> c:<span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>◇ 位域的宽度不能超过它所依附数据类型的长度，成员变量都是有类型的，这个类型限制了成员变量的最大长度，<code>:</code>后面的数字不能超过这个长度。</p>
+<p>◇ 位域可以是无名位域，用于填充和调整位置，无名位域不能使用。</p>
+<p>进一步了解见<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-bit-fields.html">C 位域 | 菜鸟教程 (runoob.com)</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/sty124578/article/details/79456405">(16条消息) 位域的定义和使用<em>Unix探索之旅的博客-CSDN博客</em>位域定义</a>，但要注意其中内容有错。</p>
+<h1 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h1><h2 id="常数宏"><a href="#常数宏" class="headerlink" title="常数宏"></a>常数宏</h2><p>● 定义一个常数，消除神仙数</p>
+<p>● 建议多多使用，增加程序的可读性</p>
+<h2 id="函数宏"><a href="#函数宏" class="headerlink" title="函数宏"></a>函数宏</h2><p>● 保持程序结构化，消除函数调用开销</p>
+<p>● 不建议经常使用，容易出问题，加括号又会导致结果过于繁琐</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在c++程序编译的过程中，会先把所有的宏直接替换成相应的代码*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ADD(a,b) a+b</span></span><br><span class="line"><span class="type">int</span> i = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">/* --&gt; int i = 4+5;*/</span></span><br><span class="line"><span class="type">int</span> j = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>) * <span class="number">3</span>; <span class="comment">/* --&gt; int j = 4+5*3 */</span></span><br></pre></td></tr></table></figure>
+<h2 id="控制宏"><a href="#控制宏" class="headerlink" title="控制宏"></a>控制宏</h2><p>● 开关：用来适应不同的环境，只需要在宏中定义即可，而不需要每次修改代码中每一处，多用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*比如，如果我们自己开发要用一个sql，客户要用另一个sql，那么我们可以这样做，而不需要每次进行大量的修改*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> LOCAL_VER</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;local server:mysql&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;customer server:oracle&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="comment">/*再比如，如果我们想在windows环境下进行某项操作，我们可以如下操作,WIN32是一个在windows系统中会自动定义的宏*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="C-如何调用C函数"><a href="#C-如何调用C函数" class="headerlink" title="C++如何调用C函数"></a>C++如何调用C函数</h1><p>● 直接调用会出错</p>
+<p>● 因为在编译过程中程序会将变量什么的修饰成新的名称，c++认为cfunction是c++的函数，所以按照c++的格式修饰，但是cfunction其实是c程序，所以按照修饰之后的名称去找，找不到cfunction</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cfunction</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>● 修改方法为告诉程序这个函数是C程序，但是这样会(没太听清，好像是函数多了会比较麻烦)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>● 所以我们还可以这样，无论是一个函数，还是多个函数，只需要加一次这段宏即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>● 记住，要在头尾用两次ifdef，而不要直接将整段包在中间，包在中间会导致在c环境下失去这些定义</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -331,6 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text">结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">对齐问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E5%9F%9F"><span class="nav-number">1.2.</span> <span class="nav-text">位域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%97%8F-%E4%BD%8D%E5%9F%9F%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E7%BB%93%E6%9E%84%E5%8F%98%E9%87%8F%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">● 位域的定义和结构变量的说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%97%8F-%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.2.</span> <span class="nav-text">● 一些说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-number">2.</span> <span class="nav-text">宏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E6%95%B0%E5%AE%8F"><span class="nav-number">2.1.</span> <span class="nav-text">常数宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%AE%8F"><span class="nav-number">2.2.</span> <span class="nav-text">函数宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%AE%8F"><span class="nav-number">2.3.</span> <span class="nav-text">控制宏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8C%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">C++如何调用C函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -346,20 +380,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
