@@ -5,176 +5,10 @@
     <url>/2022/08/30/algorithm-1/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>study,cs</category>
+        <category>cs</category>
       </categories>
       <tags>
         <tag>算法导论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>android-1</title>
-    <url>/2022/09/02/android-1/</url>
-    <content><![CDATA[<p>无限通讯技术发展</p>
-<p>● 从1G到5G</p>
-<p>无限通讯：传输电磁波</p>
-<p>频率越来越高，波长越来越小(波长越来越小就要求基站越来越多才OK，5G很烧钱！)</p>
-<p>基站越来越密</p>
-<p>1G(1985)：模拟信号，只能通话</p>
-<p>2G(1990)：数字信号(32Kbps)，语音和短信，支持GSM小规模数据传输</p>
-<p>3G()：较高频宽(2Mbps)，蜂窝网络，3G移动通讯标准，TD-SCDMA多媒体通讯</p>
-<p>4G()：高频宽(100Mbps)，全方位网络</p>
-<p>5G()：超高频宽(2.5Gbps)，物联网，整合物联网的全新网络</p>
-<p>● 安卓系统和苹果系统</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>开发平台</th>
-<th>开发理念</th>
-<th>运行机制</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>安卓</td>
-<td>Linux</td>
-<td>免费、开源</td>
-<td>无法强制限制内存资源使用</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>苹果</td>
-<td>Unix</td>
-<td>收费、闭源</td>
-<td>严格控制内存使用(墓碑机制、沙盒机制)</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>● 移动应用程序开发趋势</p>
-<p>Android</p>
-<p>三大优势：开放性；定制化；免费用</p>
-<p>开发趋势：</p>
-<p>系统碎片化：ROM定制</p>
-<p>屏幕碎片化：适配尺寸</p>
-]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>compile-2</title>
-    <url>/2022/09/01/compile-2/</url>
-    <content><![CDATA[<h1 id="文法和语言的概念和表示"><a href="#文法和语言的概念和表示" class="headerlink" title="文法和语言的概念和表示"></a>文法和语言的概念和表示</h1><h2 id="预备知识—形式语言基础"><a href="#预备知识—形式语言基础" class="headerlink" title="预备知识—形式语言基础"></a>预备知识—形式语言基础</h2><h2 id="文法的非形式讨论"><a href="#文法的非形式讨论" class="headerlink" title="文法的非形式讨论"></a>文法的非形式讨论</h2><h3 id="●-文法："><a href="#●-文法：" class="headerlink" title="● 文法："></a>● 文法：</h3><p>​    文法是对语言结构的定义与描述。即从形式上用于描述和规定语言结构的称为“文法”(或称为“语法”)。</p>
-<p>◇ 文法是在形式上对句子结构的定义与描述，不涉及语义问题。</p>
-<h3 id="●-语法规则："><a href="#●-语法规则：" class="headerlink" title="● 语法规则："></a>● 语法规则：</h3><p>​    描述句子语法结构的规则。规定用“::=”表示“由……组成”。</p>
-<p>&lt;句子&gt;::=&lt;主语&gt;&lt;谓语&gt;</p>
-<p>&lt;主语&gt;::=&lt;代词&gt;|&lt;名词&gt;</p>
-<p>&lt;代词&gt;::=你|我|他</p>
-<h3 id="●-由规则推导句子："><a href="#●-由规则推导句子：" class="headerlink" title="● 由规则推导句子："></a>● 由规则推导句子：</h3><p>​    可以按照语法规则来推导或产生句子。</p>
-<p>◇ 推导方法：从一个要识别的符号开始推导，即用相应规则的右部来代替规则的左部，每次仅用一条规则去进行推导，直到所有符号被终结符号替代为止。</p>
-<p>◇ 最左推导：有若干语法成分同时存在时，我们总是从最左部分进行推导，这称之为最左推导。最右推导同理。</p>
-<h3 id="●-语法树："><a href="#●-语法树：" class="headerlink" title="● 语法树："></a>● 语法树：</h3><p>​    语法树用来描述一个句子的语法结构</p>
-<p>◇ 语法成分：&lt;&gt;，在形式语言中又称”非终结符“</p>
-<p>◇ 单词符号：在形式语言中又称“终结符号”</p>
-<h2 id="文法和语言的形式定义"><a href="#文法和语言的形式定义" class="headerlink" title="文法和语言的形式定义"></a>文法和语言的形式定义</h2><h3 id="文法："><a href="#文法：" class="headerlink" title="文法："></a>文法：</h3><p>​    文法G = ($V_n,V_t,P,Z$),</p>
-<p>$V_n$ : 非终结符号集</p>
-<p>$V_t$ : 终结符号集    #V = $V_n \cup V_t$称为文法的字汇表 </p>
-<p>P : 产生式或规则的集合    </p>
-<h1 id="规则是一个有序对-U-x-，通常写为U-x或U→x，-U-1-x-geq-0-U-in-V-n-x-in-V"><a href="#规则是一个有序对-U-x-，通常写为U-x或U→x，-U-1-x-geq-0-U-in-V-n-x-in-V" class="headerlink" title="规则是一个有序对(U,x)，通常写为U::=x或U→x，|U| = 1 |x| $\geq$ 0 , $U\in V_n,x\in V^*$"></a>规则是一个有序对(U,x)，通常写为U::=x或U→x，|U| = 1 |x| $\geq$ 0 , $U\in V_n,x\in V^*$</h1><p>Z : 开始符号(识别符号)    #$Z\in V_n$</p>
-<h3 id="直接推导"><a href="#直接推导" class="headerlink" title="直接推导"></a>直接推导</h3><p>文法G：v = xUy,    w = xuy</p>
-<p>其中x、y$\in V_<em>,u \in V_n, u \in V^</em>$</p>
-<p>若U::=u$\in P$，则$v\underset{G}{\Rightarrow}w$.</p>
-<p>若x = y = $\xi$，有U::=u，则$U\underset{G}{\Rightarrow}u$   #啥意思？感觉多此一举。。。</p>
-<h3 id="间接推导"><a href="#间接推导" class="headerlink" title="间接推导"></a>间接推导</h3><p>文法G，$U_0,U_1,U_2,…,U_n \in V^+$</p>
-<p>if $v \underset{G}{\Rightarrow} U_0 \underset{G}{\Rightarrow} U_1 \underset{G}{\Rightarrow} U_2 \underset{G}{\Rightarrow} … \underset{G}{\Rightarrow} U_n \underset{G}{\Rightarrow} w$,则$v \stackrel{+}{\underset{G}{\Rightarrow}} w$</p>
-<h3 id="v-stackrel-underset-G-Rightarrow-w"><a href="#v-stackrel-underset-G-Rightarrow-w" class="headerlink" title="$v \stackrel{*}{\underset{G}{\Rightarrow}} w$"></a>$v \stackrel{*}{\underset{G}{\Rightarrow}} w$</h3><p>文法G，v、w$\in V^+$，</p>
-<p>if $v \stackrel{+}{\underset{G}{\Rightarrow}} w$，或 v = w，则$v \stackrel{*}{\underset{G}{\Rightarrow}} w$</p>
-<h3 id="规范推导"><a href="#规范推导" class="headerlink" title="规范推导"></a>规范推导</h3><p>有$xUy \Rightarrow xuy$，if $y \in V_t^*$，则此推导为规范的，记为$x<br>Uy \nRightarrow xuy$   #ppt中斜杠似乎为竖直杠</p>
-<p>直观意义：规范推导 = 最右推导 </p>
-<h3 id="文法G-Z"><a href="#文法G-Z" class="headerlink" title="文法G[Z]"></a>文法G[Z]</h3><p>句型：x是句型 &lt;=&gt; Z $\stackrel{<em>}{\Rightarrow}$ x，且$x \in V^</em>$；</p>
-<p>句子：x是句子 &lt;=&gt; Z $\stackrel{+}{\Rightarrow}$ x，且x$\in V_t^* $;    </p>
-<!--注意句子和句型的区别在哪，一个是间接推导&带星推导，一个是字汇表克林闭包&终结符号集克林闭包-->
-<p>语言：L(G[Z]) = {x | x $\in V_t^*$，Z$\stackrel{+}{\Rightarrow}$x}；</p>
-<h3 id="等价文法"><a href="#等价文法" class="headerlink" title="等价文法"></a>等价文法</h3><p>G和$G^,$是两个不同的文法，若L(G) = L($G^,$),则G和$G^,$称为等价文法</p>
-<!--一个文法对应一个语言，但是一个语言不一定对应一个文法-->
-<h3 id="递归文法"><a href="#递归文法" class="headerlink" title="递归文法"></a>递归文法</h3><h4 id="递归规则"><a href="#递归规则" class="headerlink" title="递归规则"></a>递归规则</h4><p>规则右部有与左部相同的符号，</p>
-<p>对于U::=xUy，若x=$\xi$，即U::=Uy，左递归；</p>
-<p>若y = $\xi$，即U::=xU，右递归</p>
-<h4 id="递归文法-1"><a href="#递归文法-1" class="headerlink" title="递归文法"></a>递归文法</h4><p>● 文法G，存在U$\in V_n$，</p>
-<p>​    if U$\stackrel{+}{\Rightarrow}$…U…，则G为递归文法(自迁入递归)；</p>
-<p>​    if U$\stackrel{+}{\Rightarrow}$U…，则G为左递归文法；</p>
-<p>​    if U$\stackrel{+}{\Rightarrow}$…U，则G为右递归文法。</p>
-<p>● 左递归文法的缺点：</p>
-<p>​    不能用自顶向下的方法来进行语法分析</p>
-<p>● 递归文法的优点：</p>
-<p>​    可用有穷条规则，定义无穷语言</p>
-<h3 id="句型的短语、简单短语和句柄"><a href="#句型的短语、简单短语和句柄" class="headerlink" title="句型的短语、简单短语和句柄"></a>句型的短语、简单短语和句柄</h3><h3 id="短语-amp-简单短语"><a href="#短语-amp-简单短语" class="headerlink" title="短语&amp;简单短语"></a>短语&amp;简单短语</h3><p>给定文法G[Z]，w = xuy$\in V^+$，为该文法的句型，</p>
-<p>若Z$\stackrel{*}{\Rightarrow}$xUy，且U$\stackrel{+}{\Rightarrow}$u，则u是句型w相对于U的短语；</p>
-<p>若Z$\stackrel{*}{\Rightarrow}$xUy，且U$\Rightarrow$u，则u是句型w相对于U的简单短语；</p>
-<p>其中U$\in V_n, u\in V^+, x,y\in V^*$</p>
-<h3 id="句柄"><a href="#句柄" class="headerlink" title="句柄"></a>句柄</h3><p>任一句型的最左简单短语称为该句型的句柄</p>
-<!--句柄对一个句型只能有一个，简单短语呢？-->
-]]></content>
-      <categories>
-        <category>study,cs</category>
-      </categories>
-      <tags>
-        <tag>编译技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cpp-1</title>
-    <url>/2022/08/30/cpp-1/</url>
-    <content><![CDATA[<p>动态内存分配 malloc/free，堆栈 stack/heap</p>
-<p>函数指针 pfn ， bsearch，qsort</p>
-<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><h2 id="对齐问题"><a href="#对齐问题" class="headerlink" title="对齐问题"></a>对齐问题</h2><p>● 对齐特性：按照最大对齐，可通过#pragma pack(n)修改</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">24</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> pack(1) <span class="comment">/*意思是将一个字节作为最小限制单位，即无气泡*/</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br></pre></td></tr></table></figure>
-<h2 id="位域"><a href="#位域" class="headerlink" title="位域"></a>位域</h2><p>● 有些信息在存储时，并不需要占用一个完整的字节，而只需占几个二进制位(如“开关”)。c语言为此提供了一个数据结构，称为“位域”/“位段”。</p>
-<p>● “位域”是把一个字节中的二进制位划分为几个不同的区域，并说明每个区域的位数。每个域有一个域名，允许在程序中按照域名进行操作。</p>
-<h3 id="●-位域的定义和结构变量的说明"><a href="#●-位域的定义和结构变量的说明" class="headerlink" title="● 位域的定义和结构变量的说明"></a>● 位域的定义和结构变量的说明</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> 位域结构名</span><br><span class="line">&#123;</span><br><span class="line">    位域列表 <span class="comment">/* type [member_name] : width ; */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>其中，</p>
-<p>​    type只能为int，unsigned int，signed int三种类型。 <!--char好像也行？--></p>
-<p>​    member_name是位域的名称</p>
-<p>​    width是位域中位的数量，宽度必须小于或等于<em>指定类型</em>的位宽度</p>
-<h3 id="●-一些说明"><a href="#●-一些说明" class="headerlink" title="● 一些说明"></a>● 一些说明</h3><p>◇ 一个位域存储在同一个字节中，如果一个字节所剩空间不够存放另一位域时，会从下一单元起存放位域，也可以有意使位域从下一单元开始，如使用空域 </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">bs</span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> a:<span class="number">4</span>;</span><br><span class="line">    <span class="type">unsigned</span>  :<span class="number">4</span>;    <span class="comment">/* 空域 */</span></span><br><span class="line">    <span class="type">unsigned</span> b:<span class="number">4</span>;    <span class="comment">/* 从下一单元开始存放 */</span></span><br><span class="line">    <span class="type">unsigned</span> c:<span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>◇ 位域的宽度不能超过它所依附数据类型的长度，成员变量都是有类型的，这个类型限制了成员变量的最大长度，<code>:</code>后面的数字不能超过这个长度。</p>
-<p>◇ 位域可以是无名位域，用于填充和调整位置，无名位域不能使用。</p>
-<p>进一步了解见<a href="https://www.runoob.com/cprogramming/c-bit-fields.html">C 位域 | 菜鸟教程 (runoob.com)</a>，<a href="https://blog.csdn.net/sty124578/article/details/79456405">(16条消息) 位域的定义和使用<em>Unix探索之旅的博客-CSDN博客</em>位域定义</a>，但要注意其中内容有错。</p>
-<h1 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h1><h2 id="常数宏"><a href="#常数宏" class="headerlink" title="常数宏"></a>常数宏</h2><p>● 定义一个常数，消除神仙数</p>
-<p>● 建议多多使用，增加程序的可读性</p>
-<h2 id="函数宏"><a href="#函数宏" class="headerlink" title="函数宏"></a>函数宏</h2><p>● 保持程序结构化，消除函数调用开销</p>
-<p>● 不建议经常使用，容易出问题，加括号又会导致结果过于繁琐</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*在c++程序编译的过程中，会先把所有的宏直接替换成相应的代码*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ADD(a,b) a+b</span></span><br><span class="line"><span class="type">int</span> i = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">/* --&gt; int i = 4+5;*/</span></span><br><span class="line"><span class="type">int</span> j = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>) * <span class="number">3</span>; <span class="comment">/* --&gt; int j = 4+5*3 */</span></span><br></pre></td></tr></table></figure>
-<h2 id="控制宏"><a href="#控制宏" class="headerlink" title="控制宏"></a>控制宏</h2><p>● 开关：用来适应不同的环境，只需要在宏中定义即可，而不需要每次修改代码中每一处，多用</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*比如，如果我们自己开发要用一个sql，客户要用另一个sql，那么我们可以这样做，而不需要每次进行大量的修改*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> LOCAL_VER</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;local server:mysql&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;customer server:oracle&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="comment">/*再比如，如果我们想在windows环境下进行某项操作，我们可以如下操作,WIN32是一个在windows系统中会自动定义的宏*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<h1 id="C-如何调用C函数"><a href="#C-如何调用C函数" class="headerlink" title="C++如何调用C函数"></a>C++如何调用C函数</h1><p>● 直接调用会出错</p>
-<p>● 因为在编译过程中程序会将变量什么的修饰成新的名称，c++认为cfunction是c++的函数，所以按照c++的格式修饰，但是cfunction其实是c程序，所以按照修饰之后的名称去找，找不到cfunction</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cfunction</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>● 修改方法为告诉程序这个函数是C程序，但是这样会(没太听清，好像是函数多了会比较麻烦)</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p>● 所以我们还可以这样，无论是一个函数，还是多个函数，只需要加一次这段宏即可</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<p>● 记住，要在头尾用两次ifdef，而不要直接将整段包在中间，包在中间会导致在c环境下失去这些定义</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
       </tags>
   </entry>
   <entry>
@@ -248,10 +82,261 @@
 <p>●etc</p>
 ]]></content>
       <categories>
-        <category>study,cs</category>
+        <category>cs</category>
       </categories>
       <tags>
         <tag>编译技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>android-1</title>
+    <url>/2022/09/02/android-1/</url>
+    <content><![CDATA[<p>无限通讯技术发展</p>
+<p>● 从1G到5G</p>
+<p>无限通讯：传输电磁波</p>
+<p>频率越来越高，波长越来越小(波长越来越小就要求基站越来越多才OK，5G很烧钱！)</p>
+<p>基站越来越密</p>
+<p>1G(1985)：模拟信号，只能通话</p>
+<p>2G(1990)：数字信号(32Kbps)，语音和短信，支持GSM小规模数据传输</p>
+<p>3G()：较高频宽(2Mbps)，蜂窝网络，3G移动通讯标准，TD-SCDMA多媒体通讯</p>
+<p>4G()：高频宽(100Mbps)，全方位网络</p>
+<p>5G()：超高频宽(2.5Gbps)，物联网，整合物联网的全新网络</p>
+<p>● 安卓系统和苹果系统</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>开发平台</th>
+<th>开发理念</th>
+<th>运行机制</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安卓</td>
+<td>Linux</td>
+<td>免费、开源</td>
+<td>无法强制限制内存资源使用</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>Unix</td>
+<td>收费、闭源</td>
+<td>严格控制内存使用(墓碑机制、沙盒机制)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>● 移动应用程序开发趋势</p>
+<p>Android</p>
+<p>三大优势：开放性；定制化；免费用</p>
+<p>开发趋势：</p>
+<p>系统碎片化：ROM定制</p>
+<p>屏幕碎片化：适配尺寸</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>compile-2</title>
+    <url>/2022/09/01/compile-2/</url>
+    <content><![CDATA[<h1 id="文法和语言的概念和表示"><a href="#文法和语言的概念和表示" class="headerlink" title="文法和语言的概念和表示"></a>文法和语言的概念和表示</h1><h2 id="预备知识—形式语言基础"><a href="#预备知识—形式语言基础" class="headerlink" title="预备知识—形式语言基础"></a>预备知识—形式语言基础</h2><h2 id="文法的非形式讨论"><a href="#文法的非形式讨论" class="headerlink" title="文法的非形式讨论"></a>文法的非形式讨论</h2><h3 id="文法："><a href="#文法：" class="headerlink" title="文法："></a>文法：</h3><p>​    文法是对语言结构的定义与描述。即从形式上用于描述和规定语言结构的称为“文法”(或称为“语法”)。</p>
+<p>◇ 文法是在形式上对句子结构的定义与描述，不涉及语义问题。</p>
+<h3 id="语法规则："><a href="#语法规则：" class="headerlink" title="语法规则："></a>语法规则：</h3><p>​    描述句子语法结构的规则。规定用“::=”表示“由……组成”。</p>
+<p>&lt;句子&gt;::=&lt;主语&gt;&lt;谓语&gt;</p>
+<p>&lt;主语&gt;::=&lt;代词&gt;|&lt;名词&gt;</p>
+<p>&lt;代词&gt;::=你|我|他</p>
+<h3 id="由规则推导句子："><a href="#由规则推导句子：" class="headerlink" title="由规则推导句子："></a>由规则推导句子：</h3><p>​    可以按照语法规则来推导或产生句子。</p>
+<p>◇ 推导方法：从一个要识别的符号开始推导，即用相应规则的右部来代替规则的左部，每次仅用一条规则去进行推导，直到所有符号被终结符号替代为止。</p>
+<p>◇ 最左推导：有若干语法成分同时存在时，我们总是从最左部分进行推导，这称之为最左推导。最右推导同理。</p>
+<h3 id="语法树："><a href="#语法树：" class="headerlink" title="语法树："></a>语法树：</h3><p>​    语法树用来描述一个句子的语法结构</p>
+<p>◇ 语法成分：&lt;&gt;，在形式语言中又称”非终结符“</p>
+<p>◇ 单词符号：在形式语言中又称“终结符号”</p>
+<h2 id="文法和语言的形式定义"><a href="#文法和语言的形式定义" class="headerlink" title="文法和语言的形式定义"></a>文法和语言的形式定义</h2><h3 id="文法：-1"><a href="#文法：-1" class="headerlink" title="文法："></a>文法：</h3><p>​    文法G = ($V_n,V_t,P,Z$),</p>
+<p>$V_n$ : 非终结符号集</p>
+<p>$V_t$ : 终结符号集    #V = $V_n \cup V_t$称为文法的字汇表 </p>
+<p>P : 产生式或规则的集合    </p>
+<h1 id="规则是一个有序对-U-x-，通常写为U-x或U→x，-U-1-x-geq-0-U-in-V-n-x-in-V"><a href="#规则是一个有序对-U-x-，通常写为U-x或U→x，-U-1-x-geq-0-U-in-V-n-x-in-V" class="headerlink" title="规则是一个有序对(U,x)，通常写为U::=x或U→x，|U| = 1 |x| $\geq$ 0 , $U\in V_n,x\in V^*$"></a>规则是一个有序对(U,x)，通常写为U::=x或U→x，|U| = 1 |x| $\geq$ 0 , $U\in V_n,x\in V^*$</h1><p>Z : 开始符号(识别符号)    #$Z\in V_n$</p>
+<h3 id="直接推导"><a href="#直接推导" class="headerlink" title="直接推导"></a>直接推导</h3><p>文法G：v = xUy,    w = xuy</p>
+<p>其中x、y$\in V_<em>,u \in V_n, u \in V^</em>$</p>
+<p>若U::=u$\in P$，则$v\underset{G}{\Rightarrow}w$.</p>
+<p>若x = y = $\xi$，有U::=u，则$U\underset{G}{\Rightarrow}u$   #啥意思？感觉多此一举。。。</p>
+<h3 id="间接推导"><a href="#间接推导" class="headerlink" title="间接推导"></a>间接推导</h3><p>文法G，$U_0,U_1,U_2,…,U_n \in V^+$</p>
+<p>if $v \underset{G}{\Rightarrow} U_0 \underset{G}{\Rightarrow} U_1 \underset{G}{\Rightarrow} U_2 \underset{G}{\Rightarrow} … \underset{G}{\Rightarrow} U_n \underset{G}{\Rightarrow} w$,则$v \stackrel{+}{\underset{G}{\Rightarrow}} w$</p>
+<h3 id="v-stackrel-underset-G-Rightarrow-w"><a href="#v-stackrel-underset-G-Rightarrow-w" class="headerlink" title="$v \stackrel{*}{\underset{G}{\Rightarrow}} w$"></a>$v \stackrel{*}{\underset{G}{\Rightarrow}} w$</h3><p>文法G，v、w$\in V^+$，</p>
+<p>if $v \stackrel{+}{\underset{G}{\Rightarrow}} w$，或 v = w，则$v \stackrel{*}{\underset{G}{\Rightarrow}} w$</p>
+<h3 id="规范推导"><a href="#规范推导" class="headerlink" title="规范推导"></a>规范推导</h3><p>有$xUy \Rightarrow xuy$，if $y \in V_t^*$，则此推导为规范的，记为$x<br>Uy \nRightarrow xuy$   #ppt中斜杠似乎为竖直杠</p>
+<p>直观意义：规范推导 = 最右推导 </p>
+<h3 id="文法G-Z"><a href="#文法G-Z" class="headerlink" title="文法G[Z]"></a>文法G[Z]</h3><p>句型：x是句型 &lt;=&gt; Z $\stackrel{<em>}{\Rightarrow}$ x，且$x \in V^</em>$；</p>
+<p>句子：x是句子 &lt;=&gt; Z $\stackrel{+}{\Rightarrow}$ x，且x$\in V_t^* $;    </p>
+<!--注意句子和句型的区别在哪，一个是间接推导&带星推导，一个是字汇表克林闭包&终结符号集克林闭包-->
+<p>语言：L(G[Z]) = {x | x $\in V_t^*$，Z$\stackrel{+}{\Rightarrow}$x}；</p>
+<h3 id="等价文法"><a href="#等价文法" class="headerlink" title="等价文法"></a>等价文法</h3><p>G和$G^,$是两个不同的文法，若L(G) = L($G^,$),则G和$G^,$称为等价文法</p>
+<!--一个文法对应一个语言，但是一个语言不一定对应一个文法-->
+<h3 id="递归文法"><a href="#递归文法" class="headerlink" title="递归文法"></a>递归文法</h3><h4 id="递归规则"><a href="#递归规则" class="headerlink" title="递归规则"></a>递归规则</h4><p>规则右部有与左部相同的符号，</p>
+<p>对于U::=xUy，若x=$\xi$，即U::=Uy，左递归；</p>
+<p>若y = $\xi$，即U::=xU，右递归</p>
+<h4 id="递归文法-1"><a href="#递归文法-1" class="headerlink" title="递归文法"></a>递归文法</h4><p>● 文法G，存在U$\in V_n$，</p>
+<p>​    if U$\stackrel{+}{\Rightarrow}$…U…，则G为递归文法(自迁入递归)；</p>
+<p>​    if U$\stackrel{+}{\Rightarrow}$U…，则G为左递归文法；</p>
+<p>​    if U$\stackrel{+}{\Rightarrow}$…U，则G为右递归文法。</p>
+<p>● 左递归文法的缺点：</p>
+<p>​    不能用自顶向下的方法来进行语法分析</p>
+<p>● 递归文法的优点：</p>
+<p>​    可用有穷条规则，定义无穷语言</p>
+<h3 id="句型的短语、简单短语和句柄"><a href="#句型的短语、简单短语和句柄" class="headerlink" title="句型的短语、简单短语和句柄"></a>句型的短语、简单短语和句柄</h3><h3 id="短语-amp-简单短语"><a href="#短语-amp-简单短语" class="headerlink" title="短语&amp;简单短语"></a>短语&amp;简单短语</h3><p>给定文法G[Z]，w = xuy$\in V^+$，为该文法的句型，</p>
+<p>若Z$\stackrel{*}{\Rightarrow}$xUy，且U$\stackrel{+}{\Rightarrow}$u，则u是句型w相对于U的短语；</p>
+<p>若Z$\stackrel{*}{\Rightarrow}$xUy，且U$\Rightarrow$u，则u是句型w相对于U的简单短语；</p>
+<p>其中U$\in V_n, u\in V^+, x,y\in V^*$</p>
+<h3 id="句柄"><a href="#句柄" class="headerlink" title="句柄"></a>句柄</h3><p>任一句型的最左简单短语称为该句型的句柄</p>
+<!--句柄对一个句型只能有一个，简单短语呢？-->
+<h2 id="语法树与二义性文法"><a href="#语法树与二义性文法" class="headerlink" title="语法树与二义性文法"></a>语法树与二义性文法</h2><h3 id="推导与语法树"><a href="#推导与语法树" class="headerlink" title="推导与语法树"></a>推导与语法树</h3><p>● 语法树：句子结构的图示表示法，它是一种有向图，由结点和有向边组成。</p>
+<p>● 结点：符号</p>
+<p>​    根结点：识别符号</p>
+<p>​    中间结点：非终结符</p>
+<p>​    叶结点：终结符或非终结符</p>
+<p>● 有向边：表示结点间的派生关系</p>
+<h3 id="句型的推导及语法树的生成-自顶向下"><a href="#句型的推导及语法树的生成-自顶向下" class="headerlink" title="句型的推导及语法树的生成(自顶向下)"></a>句型的推导及语法树的生成(自顶向下)</h3><p>给定G[Z]，句型w：</p>
+<p>​    可建立推导序列，$Z \stackrel{*}{\underset{G}{\Rightarrow}} w$</p>
+<p>​    可建立语法树，以Z为树根结点，每步推导生成语法树的一枝，最终可生成句型的语法树</p>
+<p>​    注意在生成语法树时的二义性问题</p>
+<h3 id="子树与短语"><a href="#子树与短语" class="headerlink" title="子树与短语"></a>子树与短语</h3><p>● 子树：语法树中的某个结点(子树的根)连同它向下【派生的部分所组成</p>
+<p>● 定理：某子树的末端结点按<em>自左向右</em>顺序为句型中的符号串，则该符号串为该句型的相对于该子树根的短语。</p>
+<p>​    那么，我们就可以画出句型的语法树，然后根据子树找短语、简单短语、句柄。</p>
+<h3 id="树与推导"><a href="#树与推导" class="headerlink" title="树与推导"></a>树与推导</h3><p>● 句型推导过程    &lt;==&gt;    句型语法树的生长过程</p>
+<h4 id="由推导构造语法树"><a href="#由推导构造语法树" class="headerlink" title="由推导构造语法树"></a>由推导构造语法树</h4><script type="math/tex; mode=display">
+从识别符号开始，自右向左建立推导序列\\
+\Downarrow\\
+由根结点开始，自上而下建立语法树</script><h4 id="由语法树构造推导"><a href="#由语法树构造推导" class="headerlink" title="由语法树构造推导"></a>由语法树构造推导</h4><script type="math/tex; mode=display">
+自下而上地修剪子树的末端结点，直至把整棵树减掉(留根)，每剪一次对应一次规约\\
+\Downarrow\\
+从句型开始，自左向右地逐步进行规约，建立推导序列</script><p>● 对句型中最左简单短语(句柄)进行的规约称为规范规约。</p>
+<p>​    通常我们每次都剪掉当前句型的句柄(最左简单短语)，即每次均进行规范规约。</p>
+<p>● 规范规约与规范推导互为逆过程</p>
+<p>● 通过规范推导或规范规约得到的句型称为规范句型</p>
+<h3 id="文法的二义性"><a href="#文法的二义性" class="headerlink" title="文法的二义性"></a>文法的二义性</h3><p>● 若对于一个文法的某一句子存在两颗不同的语法树，则该文法是二义性文法，否则是无二义性文法。</p>
+<p>● 若一个文法的某句子存在两个不同的规范推导，则该文法是二义性的，否则是无二义性的</p>
+<p>● 若一个文法的某规范句型的句柄不唯一，则该文法是二义性的，否则是无二义性的</p>
+<p>● 文法的二义性是不可判定的</p>
+<p>​    解决办法：提出限制条件(称为无二义性的<em>充分条件</em> )，来限制<em>文法</em></p>
+<p>​    或者不改变二义性文法，而是确定一个满足无二义性充分条件的<em>编译算法</em></p>
+<h3 id="句子的分析"><a href="#句子的分析" class="headerlink" title="句子的分析"></a>句子的分析</h3><p>● 任务：给定G[Z]:$S \in V_t^*$，判定是否有$S \in L(G[E])$？</p>
+<p>​    此乃词法分析、语法分析工作，将在三四章介绍</p>
+<h3 id="有关文法的实用限制"><a href="#有关文法的实用限制" class="headerlink" title="有关文法的实用限制"></a>有关文法的实用限制</h3><h4 id="有害规则"><a href="#有害规则" class="headerlink" title="有害规则"></a>有害规则</h4><p>● 如U::=U的规则，会引起二义性</p>
+<h4 id="多余规则"><a href="#多余规则" class="headerlink" title="多余规则"></a>多余规则</h4><p>● 在推导文法的所有句子中，始终用不到的规则，该规则的左部非终结符不出现在任何句型中</p>
+<p>● 在推导句子的过程中，一旦使用了该规则，将推不出任何终结符号串。即该规则中含有推不出任何终结符号的非终结符。</p>
+<p>例如给定G[Z]，若其中关于U的规则<em>只有</em>如下一条：</p>
+<p>U::=xUy，该规则是多余规则。</p>
+<p>● 若某文法中无有害规则或多余规则，则称该文法是压缩过的。</p>
+<h3 id="文法的其他表示法"><a href="#文法的其他表示法" class="headerlink" title="文法的其他表示法"></a>文法的其他表示法</h3><h4 id="扩充的BNF表示-Backus-Normal-Form"><a href="#扩充的BNF表示-Backus-Normal-Form" class="headerlink" title="扩充的BNF表示(Backus Normal Form)"></a>扩充的BNF表示(Backus Normal Form)</h4><p>● BNF的元符号：&lt;    &gt;    ::=    |</p>
+<p>● 扩充的BNF的元符号：&lt;    &gt;    ::=    |    {    }    [    ]    (    )</p>
+<h4 id="语法图"><a href="#语法图" class="headerlink" title="语法图"></a>语法图</h4><p><img src="C:\Users\Dell\rbkd_images\compile-2-1.png" alt="compile-2-1"></p>
+<h3 id="文法和语言分类"><a href="#文法和语言分类" class="headerlink" title="文法和语言分类"></a>文法和语言分类</h3><p>● 形式语言：用文法和自动机所描述的没有语义的语言</p>
+<p>● 语言定义：L(G[Z]) = ${x|x\in V_t^*,z \stackrel{+}{\Rightarrow} x}$</p>
+<p>● 文法定义：乔姆斯基将所有文法都定义为一个四元组：G = ($V_n,V_t,P,Z$)</p>
+<p>$V_n$:非终结符号集</p>
+<p>$V_t$:终结符号集</p>
+<p>P:产生式或规则的集合</p>
+<p>Z:开始符号(识别符号)    $Z \in V_n$</p>
+<p>● 文法和语言分类：0型、1型、2型、3型</p>
+<p>​    差别在于对产生式施加不同的限制</p>
+<p>● 0型：</p>
+<p>​    P：u::=v，其中$u \in V^+,v \in V^*$</p>
+<p>​    称为短语结构文法，规则的左部和右部都可以是符号串，一个短语可以产生另一个短语</p>
+<p>​    L0，可以用图灵机接受</p>
+<p>● 1型：</p>
+<p>​    P：xUy  ::=  xuy，其中$U \in V_n,x、y、u \in V^*$</p>
+<p>​    称为上下文敏感或上下文有关，也即只有在x、y这样的上下文中才能把U改写成u</p>
+<p>​    L1，可以有一种线性界限自动机接受</p>
+<p>● 2型：</p>
+<p>​    P：U  ::= u，其中$U \in V_n,u \in V^*$</p>
+<p>​    称为上下文无关文法，也即把U改写成u时，不必考虑上下文</p>
+<p>​    1型文法规则中x、y均为$\xi$时即为2型文法</p>
+<p>​    L2，可以由下推自动机接受</p>
+<p>● 3型：</p>
+<p>左线性：</p>
+<p>​    P：U  ::=  t  或  U  ::= Wt，其中$U、W \in V_n,t \in V_t$</p>
+<p>右线性：</p>
+<p>​    P：U  ::= t  或  U  ::=  tW，其中$U、W \in V_n,t \in V_t$</p>
+<p>​    3型文法称为正则文法，它是对2型文法进行进一步限制</p>
+<p>​    L3，又称正则语言、正则集合，可以由有穷自动机接受</p>
+<p>● 综上，$L3 \subset L2 \subset L1 \subset L0$</p>
+<p>​    0型文法可以产生L0、L1、L2、L3</p>
+<p>​    2型文法只能产生L2、L3</p>
+<p>​    3型文法只能产生L3</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>编译技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>compile-3</title>
+    <url>/2022/09/05/compile-3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>编译技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cpp-1</title>
+    <url>/2022/08/30/cpp-1/</url>
+    <content><![CDATA[<p>动态内存分配 malloc/free，堆栈 stack/heap</p>
+<p>函数指针 pfn ， bsearch，qsort</p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><h2 id="对齐问题"><a href="#对齐问题" class="headerlink" title="对齐问题"></a>对齐问题</h2><p>● 对齐特性：按照最大对齐，可通过#pragma pack(n)修改</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">24</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br><span class="line"><span class="comment">////</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> pack(1) <span class="comment">/*意思是将一个字节作为最小限制单位，即无气泡*/</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> k;</span><br><span class="line">   <span class="type">double</span> j;</span><br><span class="line">&#125;;</span><br><span class="line">size:<span class="number">16</span></span><br></pre></td></tr></table></figure>
+<h2 id="位域"><a href="#位域" class="headerlink" title="位域"></a>位域</h2><p>● 有些信息在存储时，并不需要占用一个完整的字节，而只需占几个二进制位(如“开关”)。c语言为此提供了一个数据结构，称为“位域”/“位段”。</p>
+<p>● “位域”是把一个字节中的二进制位划分为几个不同的区域，并说明每个区域的位数。每个域有一个域名，允许在程序中按照域名进行操作。</p>
+<h3 id="●-位域的定义和结构变量的说明"><a href="#●-位域的定义和结构变量的说明" class="headerlink" title="● 位域的定义和结构变量的说明"></a>● 位域的定义和结构变量的说明</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> 位域结构名</span><br><span class="line">&#123;</span><br><span class="line">    位域列表 <span class="comment">/* type [member_name] : width ; */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其中，</p>
+<p>​    type只能为int，unsigned int，signed int三种类型。 <!--char好像也行？--></p>
+<p>​    member_name是位域的名称</p>
+<p>​    width是位域中位的数量，宽度必须小于或等于<em>指定类型</em>的位宽度</p>
+<h3 id="●-一些说明"><a href="#●-一些说明" class="headerlink" title="● 一些说明"></a>● 一些说明</h3><p>◇ 一个位域存储在同一个字节中，如果一个字节所剩空间不够存放另一位域时，会从下一单元起存放位域，也可以有意使位域从下一单元开始，如使用空域 </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">bs</span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> a:<span class="number">4</span>;</span><br><span class="line">    <span class="type">unsigned</span>  :<span class="number">4</span>;    <span class="comment">/* 空域 */</span></span><br><span class="line">    <span class="type">unsigned</span> b:<span class="number">4</span>;    <span class="comment">/* 从下一单元开始存放 */</span></span><br><span class="line">    <span class="type">unsigned</span> c:<span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>◇ 位域的宽度不能超过它所依附数据类型的长度，成员变量都是有类型的，这个类型限制了成员变量的最大长度，<code>:</code>后面的数字不能超过这个长度。</p>
+<p>◇ 位域可以是无名位域，用于填充和调整位置，无名位域不能使用。</p>
+<p>进一步了解见<a href="https://www.runoob.com/cprogramming/c-bit-fields.html">C 位域 | 菜鸟教程 (runoob.com)</a>，<a href="https://blog.csdn.net/sty124578/article/details/79456405">(16条消息) 位域的定义和使用<em>Unix探索之旅的博客-CSDN博客</em>位域定义</a>，但要注意其中内容有错。</p>
+<h1 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h1><h2 id="常数宏"><a href="#常数宏" class="headerlink" title="常数宏"></a>常数宏</h2><p>● 定义一个常数，消除神仙数</p>
+<p>● 建议多多使用，增加程序的可读性</p>
+<h2 id="函数宏"><a href="#函数宏" class="headerlink" title="函数宏"></a>函数宏</h2><p>● 保持程序结构化，消除函数调用开销</p>
+<p>● 不建议经常使用，容易出问题，加括号又会导致结果过于繁琐</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*在c++程序编译的过程中，会先把所有的宏直接替换成相应的代码*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ADD(a,b) a+b</span></span><br><span class="line"><span class="type">int</span> i = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">/* --&gt; int i = 4+5;*/</span></span><br><span class="line"><span class="type">int</span> j = <span class="built_in">ADD</span>(<span class="number">4</span>,<span class="number">5</span>) * <span class="number">3</span>; <span class="comment">/* --&gt; int j = 4+5*3 */</span></span><br></pre></td></tr></table></figure>
+<h2 id="控制宏"><a href="#控制宏" class="headerlink" title="控制宏"></a>控制宏</h2><p>● 开关：用来适应不同的环境，只需要在宏中定义即可，而不需要每次修改代码中每一处，多用</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*比如，如果我们自己开发要用一个sql，客户要用另一个sql，那么我们可以这样做，而不需要每次进行大量的修改*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> LOCAL_VER</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;local server:mysql&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;customer server:oracle&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="comment">/*再比如，如果我们想在windows环境下进行某项操作，我们可以如下操作,WIN32是一个在windows系统中会自动定义的宏*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="C-如何调用C函数"><a href="#C-如何调用C函数" class="headerlink" title="C++如何调用C函数"></a>C++如何调用C函数</h1><p>● 直接调用会出错</p>
+<p>● 因为在编译过程中程序会将变量什么的修饰成新的名称，c++认为cfunction是c++的函数，所以按照c++的格式修饰，但是cfunction其实是c程序，所以按照修饰之后的名称去找，找不到cfunction</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cfunction</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>● 修改方法为告诉程序这个函数是C程序，但是这样会(没太听清，好像是函数多了会比较麻烦)</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>● 所以我们还可以这样，无论是一个函数，还是多个函数，只需要加一次这段宏即可</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>● 记住，要在头尾用两次ifdef，而不要直接将整段包在中间，包在中间会导致在c环境下失去这些定义</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;c&quot;</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">cfunction</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
       </tags>
   </entry>
   <entry>
@@ -274,100 +359,7 @@
 <p>●数据库系统：基于数据库管理系统(DBMS)建立的具有特定数据处理功能的系统</p>
 ]]></content>
       <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>数据库系统原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>database-1-basic</title>
-    <url>/2022/08/30/database-1-basic/</url>
-    <content><![CDATA[<h1 id="数据管理技术的发展"><a href="#数据管理技术的发展" class="headerlink" title="数据管理技术的发展"></a>数据管理技术的发展</h1><h2 id="人工管理阶段"><a href="#人工管理阶段" class="headerlink" title="人工管理阶段"></a>人工管理阶段</h2><p>● 时间：20世纪50年代以前</p>
-<p>● 背景：</p>
-<p>​    - 外存仅磁带、卡片、纸带，没有磁盘等直接存取设备</p>
-<p>​    - 没有操作系统和数据管理软件，用户用机器指令编码</p>
-<p>​    - 计算机主要用于科学计算</p>
-<p>● 特点：</p>
-<p>​    - 数据不在计算机上保存</p>
-<p>​    - 没有软件系统对数据进行管理，程序规定数据的逻辑结构和物理结构，数据和程序不具有独立性</p>
-<p>​    - 基本没有文件概念，数据组织方式必须由程序员自行设计</p>
-<p>​    - 一组数据对应一个程序，数据是面向应用的，程序间不能共享数据</p>
-<h2 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h2><p>● 时间：20世纪50年代后期到60年代中期</p>
-<p>● 背景：</p>
-<p>​    - 外存出现磁盘、磁鼓等直接存取设备</p>
-<p>​    - 出现专门管理数据的软件，一般称为文件系统，包括在操作系统中</p>
-<p>​    - 计算机不但用于科学计算，还用于管理</p>
-<p>● 特点：</p>
-<p>​    - 数据以文件形式保留在外存上</p>
-<p>​    - 文件多样化</p>
-<p>​    - 数据的存取基本上以记录为单位</p>
-<p>​    - 程序和数据有<em>一定的</em>独立性（指物理独立，逻辑不独立）// mark一下，不理解欸</p>
-<p>​    - 文件和应用程序基本上是一一对应，数据共享性差，冗余度大</p>
-<p>● 问题：文件分散、相互独立，数据冗余度大，数据和程序缺乏独立性</p>
-<p>​    - 存储空间浪费</p>
-<p>​    - 容易造成数据的不一致性</p>
-<p>​    - 数据维护难度大</p>
-<p>​    - 程序维护工作量大</p>
-<h2 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h2><p>● 数据库技术要解决的基本问题</p>
-<p><em>集成</em>数据的表示</p>
-<p>统一管理下的数据<em>共享</em></p>
-<p>● 解决基本问题的核心技术</p>
-<p>数据模型</p>
-<p>数据独立性 —&gt; 共享</p>
-<p>● 面向全组织的复杂的数据结构</p>
-<p>在描述数据时，不仅描述数据本身，还要描述数据之间的联系，使整个组织的数据结构化</p>
-<p>数据结构化是数据库的主要特征之一，是数据库和文件系统的根本区别。</p>
-<p>● 数据冗余度小，易扩充</p>
-<p>● 具有较高的数据和程序的独立性</p>
-<p>数据独立性：</p>
-<p>数据的物理独立性：数据的存储结构(物理结构)改变时，数据的逻辑结构可以不变，从而应用程序也不必改变</p>
-<p>数据的逻辑独立性：数据的逻辑结构改变时，应用程序可以不变</p>
-<p>● 统一的数据控制功能</p>
-<p>数据的安全性控制：</p>
-<p>保护数据以防止不合法的使用所造成数据的泄密和破坏</p>
-<p>数据的完整性控制：</p>
-<p>指数据的正确性和相容性(一致)</p>
-<p>并发控制：</p>
-<p>● 数据模型用来抽象和表示现实世界中的数据和信息：</p>
-<p>描述对象</p>
-<p>描述与表示的目标</p>
-<p>现实世界业务 —&gt;(数据的认识、抽象) 信息世界信息(概念模型)    </p>
-<!--概念模型：又称信息模型，用于信息世界建模，是现实世界到信息世界的持续，是用户和数据库设计人员继续交流的语言-->
-<p>信息世界信息(概念模型) —&gt;(转换) 机器世界数据(数据模型)</p>
-<!--数据模型用于机器世界，按计算机系统的观点对数据建模，如层次、网状、关系模型-->
-<p>概念模型基于信息世界的主要概念，表达应用中的各种语义；</p>
-<p>具有较强的语义表达能力，能够方便、直接表达应用中的各种语义</p>
-<p>概念模型应该简单、清晰、易于理解</p>
-<p>概念模型最常用的表示方法：实体-联系方法(E-R法)</p>
-<p>实体(Entity)：客观存在并可相互区分的食物</p>
-<p>属性(Attribute)：客体所具有的某一特性</p>
-<p>码(Key)：唯一标识实体的<em>属性</em>集</p>
-<p>域(Domain)：某个(些)属性的取值范围</p>
-<p>实体型(Entity Type)：表示一类实体，用实体名及其属性名集合来抽象、刻画</p>
-<p>联系(Relation)：实体型之间的联系，是实体之间的相互关联</p>
-<p>名称</p>
-<p>类型：</p>
-<p>​    一对一联系(1:1)</p>
-<p>​    一对多联系(1:n)</p>
-<p>​    多对多联系(m:n)</p>
-<p>可以具有属性</p>
-<p>E-R图的组成：实体、联系、属性</p>
-<p>实体：长方形，框内写实体名</p>
-<p>属性：椭圆形，<em>无向边</em>连接实体和属性(码：一个属性的时候，在属性名下划线；多个属性时，弧线连接<em>无向边</em>，在上面标注”\\“)</p>
-<p>联系：菱形表示实体间的联系，菱形框内写上联系名。用无向边</p>
-<p>同一个实体集内部个实体之间也可以存在一对一、一对多、多对多的联系。</p>
-<p>三个或多个实体型间可能存在某种联系</p>
-<p>存在依赖：</p>
-<p>子女实体存在依赖于职工实体的存在，则称子女实体是弱实体</p>
-<p>标识依赖：</p>
-<p>如果实体不能由它自己的属性来唯一标识，而必须通过与它相联系的另一实体一起来标识，那么称该实体标识依赖于另一个实体</p>
-<p>实体的子集：</p>
-<p>子类可继承父类的属性，子类也可以附加某些实现</p>
-<p>子类之间的交不一定为空</p>
-]]></content>
-      <categories>
-        <category>study</category>
+        <category>cs</category>
       </categories>
       <tags>
         <tag>数据库系统原理</tag>
@@ -478,24 +470,170 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
 <h4 id="语言的运算规则"><a href="#语言的运算规则" class="headerlink" title="语言的运算规则"></a>语言的运算规则</h4><p>● 非常多，在此不一一罗列，大体上一部分是三个集合交并补的规则，一部分是正闭包和克林闭包的运算规则和二级结论；以后用到了会补充在此</p>
 ]]></content>
       <categories>
-        <category>study,cs</category>
+        <category>cs</category>
       </categories>
       <tags>
         <tag>形式语言</tag>
       </tags>
   </entry>
   <entry>
-    <title>博客搭建指南</title>
-    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
-<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
-<p>这样就可以大概搭建出一个博客的雏形了。</p>
-]]></content>
+    <title>database-1-basic</title>
+    <url>/2022/08/30/database-1-basic/</url>
+    <content><![CDATA[<h1 id="数据管理技术的发展"><a href="#数据管理技术的发展" class="headerlink" title="数据管理技术的发展"></a>数据管理技术的发展</h1><p>——如何面对失败，把人分成了不同的样子</p>
+<h2 id="人工管理阶段"><a href="#人工管理阶段" class="headerlink" title="人工管理阶段"></a>人工管理阶段</h2><p>● 时间：20世纪50年代以前</p>
+<p>● 背景：</p>
+<p>​    - 外存仅磁带、卡片、纸带，没有磁盘等直接存取设备</p>
+<p>​    - 没有操作系统和数据管理软件，用户用机器指令编码</p>
+<p>​    - 计算机主要用于科学计算</p>
+<p>● 特点：</p>
+<p>​    - 数据不在计算机上保存</p>
+<p>​    - 没有软件系统对数据进行管理，程序规定数据的逻辑结构和物理结构，数据和程序不具有独立性</p>
+<p>​    - 基本没有文件概念，数据组织方式必须由程序员自行设计</p>
+<p>​    - 一组数据对应一个程序，数据是面向应用的，程序间不能共享数据</p>
+<h2 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h2><p>● 时间：20世纪50年代后期到60年代中期</p>
+<p>● 背景：</p>
+<p>​    - 外存出现磁盘、磁鼓等直接存取设备</p>
+<p>​    - 出现专门管理数据的软件，一般称为文件系统，包括在操作系统中</p>
+<p>​    - 计算机不但用于科学计算，还用于管理</p>
+<p>● 特点：</p>
+<p>​    - 数据以文件形式保留在外存上</p>
+<p>​    - 文件多样化</p>
+<p>​    - 数据的存取基本上以记录为单位</p>
+<p>​    - 程序和数据有<em>一定的</em>独立性（指物理独立，逻辑不独立）// mark一下，不理解欸</p>
+<p>​    - 文件和应用程序基本上是一一对应，数据共享性差，冗余度大</p>
+<p>● 问题：文件分散、相互独立，数据冗余度大，数据和程序缺乏独立性</p>
+<p>​    - 存储空间浪费</p>
+<p>​    - 容易造成数据的不一致性</p>
+<p>​    - 数据维护难度大</p>
+<p>​    - 程序维护工作量大</p>
+<h2 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h2><h3 id="时间-amp-背景"><a href="#时间-amp-背景" class="headerlink" title="时间&amp;背景"></a>时间&amp;背景</h3><p>● 时间：20世纪60年代后期开始</p>
+<p>● 背景：</p>
+<p>​    - 外存有了大容量磁盘、光盘</p>
+<p>​    - 计算机管理的数据量大，关系复杂，共享性要求强(多种应用、不同语言共享数据)</p>
+<p>​    - 软件价格上升，硬件价格下降，编制和维护软件及应用程序成本相对增加，其中维护的成本更高。</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>● 突破文件系统分散管理的弱点，实现对数据的集中控制，统一管理</p>
+<h3 id="“集成”-amp-“共享”"><a href="#“集成”-amp-“共享”" class="headerlink" title="“集成”&amp;“共享”"></a>“集成”&amp;“共享”</h3><p>● 数据库中存储的数据是“集成的”和“共享的”：</p>
+<p>​    - “集成的”是指把特定应用环境中各种应用相关的数据及数据之间的联系全部地、集中地按照一定结构形式进行存储</p>
+<p>​    - “共享的”是指数据库中的数据可为多个不同的用户所共享</p>
+<h3 id="核心软件"><a href="#核心软件" class="headerlink" title="核心软件"></a>核心软件</h3><p>● 数据库管理系统DBMS</p>
+<p>​    - 最早的DBMS —— IMS，IDS</p>
+<h3 id="数据库技术要解决的基本问题"><a href="#数据库技术要解决的基本问题" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h3><p>​    - <em>集成</em>数据的表示</p>
+<p>​    - 统一管理下的数据<em>共享</em></p>
+<h3 id="解决基本问题的核心技术"><a href="#解决基本问题的核心技术" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h3><p>​    - 数据模型</p>
+<p>​    - 数据独立性 —&gt; 共享</p>
+<h3 id="数据库系统数据管理特点"><a href="#数据库系统数据管理特点" class="headerlink" title="数据库系统数据管理特点"></a>数据库系统数据管理特点</h3><h4 id="面向全组织的复杂的数据结构"><a href="#面向全组织的复杂的数据结构" class="headerlink" title="面向全组织的复杂的数据结构"></a>面向全组织的复杂的数据结构</h4><p>● 在描述数据时，不仅描述数据本身，还要描述数据之间的联系，使整个组织的数据结构化</p>
+<p>● 数据结构化是数据库的主要特征之一，是数据库和文件系统的<em>根本</em>区别。</p>
+<h4 id="数据冗余度小，易扩充"><a href="#数据冗余度小，易扩充" class="headerlink" title="数据冗余度小，易扩充"></a>数据冗余度小，易扩充</h4><p>● 数据库从整体观点描述数据。数据不再面向某个应用，而是面向整个系统，从而大大减小数据的冗余度；</p>
+<p>● 数据库数据的应用可以有很灵活的方式，可以取整体数据的各种合理子集用于不同的应用系统，并可以根据应用需求的变化，重新选取不同子集。</p>
+<h4 id="具有较高的数据和程序的独立性"><a href="#具有较高的数据和程序的独立性" class="headerlink" title="具有较高的数据和程序的独立性"></a>具有较高的数据和程序的独立性</h4><p>● 数据独立性：</p>
+<p>​    - 数据的物理独立性：数据的存储结构(物理结构)改变时，数据的逻辑结构可以不变，从而应用程序也不必改变</p>
+<p>​    - 数据的逻辑独立性：数据的逻辑结构改变时，应用程序可以不变</p>
+<p>● how？—&gt;  数据库提供了两方面的映像(转换)功能：</p>
+<p>​    - 数据的存储结构与逻辑结构之间的映像——实现数据的物理独立性</p>
+<p>​    - 数据的全局逻辑结构——实现数据的逻辑独立性</p>
+<!--依我之见，这个映像功能其实就是添加了中间层(接口)-->
+<p><img src="C:\Users\Dell\rbkd_images\database-1-1.png" alt="database-1-1"></p>
+<h4 id="统一的数据控制功能"><a href="#统一的数据控制功能" class="headerlink" title="统一的数据控制功能"></a>统一的数据控制功能</h4><p>● 数据的安全性控制：</p>
+<p>​    - 保护数据以防止不合法的使用所造成数据的泄密和破坏</p>
+<p>● 数据的完整性控制：</p>
+<p>​    - 指数据的正确性和相容性(一致性)</p>
+<p>● 并发控制：</p>
+<p>​    - 对多用户的并发操作进行控制、协调，保护数据的完整性</p>
+<p>● 数据库恢复</p>
+<p>​    - 将数据库从错误状态恢复到某一已知的正确状态</p>
+<h4 id="数据的最小存取单位是数据项"><a href="#数据的最小存取单位是数据项" class="headerlink" title="数据的最小存取单位是数据项"></a>数据的最小存取单位是数据项</h4><p>● 既可以存取一个或一组记录，也可以存取数据库中一个或一组数据项</p>
+<h3 id="数据库基本问题与关键技术"><a href="#数据库基本问题与关键技术" class="headerlink" title="数据库基本问题与关键技术"></a>数据库基本问题与关键技术</h3><h4 id="数据库技术要解决的基本问题-1"><a href="#数据库技术要解决的基本问题-1" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h4><h5 id="集成数据的表示"><a href="#集成数据的表示" class="headerlink" title="集成数据的表示"></a>集成数据的表示</h5><h5 id="统一管理下的数据共享"><a href="#统一管理下的数据共享" class="headerlink" title="统一管理下的数据共享"></a>统一管理下的数据共享</h5><h4 id="解决基本问题的核心技术-1"><a href="#解决基本问题的核心技术-1" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h4><h5 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h5><p>● 数据模型用来抽象和表示现实世界中的数据和信息：</p>
+<p>​    - 描述对象</p>
+<p>​    - 描述与表示的目标</p>
+<p>● 数据模型的层次</p>
+<script type="math/tex; mode=display">
+现实世界业务(业务数据)\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\Downarrow}数据的认识、抽象\\
+信息世界信息(概念模型,用于信息世界建模，是现实世界到信息世界的抽象，是用户和数据库设计人员进行交流的语言)\\
+\Downarrow转换\\
+机器世界数据(数据模型,用于机器世界，按计算机系统的观点对数据建模)</script><p>● 在数据库中，根据模型应用的不同目的，将模型分为两类或两个层次：</p>
+<p>概念模型(也称信息模型)</p>
+<p>数据模型(如层次、网状、关系模型)</p>
+<h5 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h5><p>● 概念模型基于信息世界的主要概念，表达应用中的各种语义(信息)</p>
+<p>● 具有较强的语义表达能力，能够方便、直接表达应用中的各种语义</p>
+<p>● 应该简单、清晰、易于理解</p>
+<p>● 最常用表示方法：实体——联系方法(E-R法)</p>
+<h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>● 实体(Entity)：客观存在并可相互区分的事物</p>
+<p>● 属性(Attribute)：实体所具有的某一属性</p>
+<p>● 码(Key)：唯一标识实体的属性集</p>
+<p>● 域(Domain)：某个(些)属性的取值范围</p>
+<p>● 实体型(Entity Type)：表示一类实体，用实体名及其属性名集合来抽象、刻画</p>
+<p>● 联系(Relation)：实体型之间的联系，是实体之间的相互关联</p>
+<p>​    - 名称</p>
+<p>​    - 类型：</p>
+<p>​        ◇ 一对一联系(1:1)</p>
+<p>​        ◇ 一对多联系(1:n)</p>
+<p>​        ◇ 多对多联系(m:n)</p>
+<p>​    - 可以具有属性</p>
+<h6 id="E-R法"><a href="#E-R法" class="headerlink" title="E-R法"></a>E-R法</h6><p>● 概述</p>
+<p>思想：</p>
+<p>​    - 用E-R图描述现实世界的信息，这种信息结构称为概念结构，然后根据具体系统的要求将概念结构转换成特定系统所能接受的逻辑结构(层次、网状、关系)</p>
+<p>操作步骤：</p>
+<p>​    - 用E-R图描述现实世界；</p>
+<p>​    - 将E-R图转换成相应的数据模型</p>
+<p>● E-R图的组成：实体、联系、属性</p>
+<p>​    - 实体：长方形，框内写实体名</p>
+<p>​    - 属性：椭圆形，<em>无向边</em>连接实体和属性(码：一个属性的时候，在属性名下划线；多个属性时，弧线连接<em>无向边</em>，在上面标注”\\“)</p>
+<p>​    - 联系：菱形表示实体间的联系，菱形框内写上联系名。用无向边把菱形分别于有关实体相连，在无向边旁标上联系的类型。若联系也具有属性，则属性和菱形也用无向边连接上。</p>
+<p>● E-R图联系</p>
+<p>​    - 同一个实体集内部个实体之间也可以存在1:1,1:n,m:n的联系</p>
+<p>​    - 三个或多个实体型间可能具有联系</p>
+<p>​    - 两个实体型之间可具有多种联系</p>
+<p>● E-R图实体之间联系的语义扩充</p>
+<p>存在依赖：</p>
+<p>​    - (职工)子女实体存在依赖于职工实体的存在，则称(职工)子女实体是弱实体</p>
+<p>标识依赖：</p>
+<p>​    - 如果实体不能由它自己的属性来唯一标识，而必须通过与它相联系的另一实体一起来标识，那么称该实体标识依赖于另一个实体(学校&amp;学生)</p>
+<p>实体的子集：</p>
+<p>​    - 子类可继承父类的属性，子类也可以附加某些属性</p>
+<p>​    - 子类之间的交不一定为空</p>
+<h5 id="数据独立性"><a href="#数据独立性" class="headerlink" title="数据独立性"></a>数据独立性</h5>]]></content>
       <categories>
         <category>cs</category>
       </categories>
       <tags>
-        <tag>日常知识</tag>
+        <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>optimization</title>
+    <url>/2022/09/01/optimization-1/</url>
+    <content><![CDATA[<h1 id="线性规划基本原理与基本算法"><a href="#线性规划基本原理与基本算法" class="headerlink" title="线性规划基本原理与基本算法"></a>线性规划基本原理与基本算法</h1><h2 id="最优化方法的基本模型"><a href="#最优化方法的基本模型" class="headerlink" title="最优化方法的基本模型"></a>最优化方法的基本模型</h2><h3 id="最优化问题的思路"><a href="#最优化问题的思路" class="headerlink" title="最优化问题的思路"></a>最优化问题的思路</h3><p>● 可能的决策方案</p>
+<p>● 限制条件</p>
+<p>● 目标的评判标准</p>
+<h3 id="最优化模型"><a href="#最优化模型" class="headerlink" title="最优化模型"></a>最优化模型</h3><p>● 可行解：满足所有约束条件的模型的解</p>
+<p>● 不可行解：</p>
+<p>● 最优解：可行解的基础上，取得了目标函数的最佳值</p>
+<h4 id="最优化模型表示的通用格式"><a href="#最优化模型表示的通用格式" class="headerlink" title="最优化模型表示的通用格式"></a>最优化模型表示的通用格式</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">min或max    目标函数</span><br><span class="line">s.t.    约束条件</span><br></pre></td></tr></table></figure>
+<h2 id="最优化方法的基本步骤"><a href="#最优化方法的基本步骤" class="headerlink" title="最优化方法的基本步骤"></a>最优化方法的基本步骤</h2><p>● 问题定义 —&gt; 模型构造 —&gt; 模型求解 —&gt; 模型验证</p>
+<h3 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h3><p>● 找出最优化问题的三个因素</p>
+<p>​    ◇ 可能的决策方案</p>
+<p>​    ◇ 限制条件</p>
+<p>​    ◇ 最优化目标</p>
+<h3 id="模型构造"><a href="#模型构造" class="headerlink" title="模型构造"></a>模型构造</h3><p>● 将问题定义转换为数学关系，将要产生的模型成为某种数学模型：</p>
+<p>​    ◇ 线性规划</p>
+<p>​    ◇ 整数规划、动态规划、网络规划</p>
+<p>​    ◇ 非线性规划</p>
+<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>● 利用成熟的最优化算法进行求解</p>
+<p>● 灵敏度分析：了解当模型参数改变时，最优解会有怎样的表现</p>
+<h3 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h3><p>● 一般方法：把模型的输出结果与历史的输出结果进行比较</p>
+<p>● 判断标准：如果模型是基于对历史数据的仔细分析，输出结果应该优于历史结果</p>
+<h2 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h2><h3 id="二维变量的线性规划模型"><a href="#二维变量的线性规划模型" class="headerlink" title="二维变量的线性规划模型"></a>二维变量的线性规划模型</h3><p>● 寻找并确定决策变量</p>
+<p>● 优化(求极大或极小的)目标函数</p>
+<p>● 解必须满足的约束条件</p>
+<h3 id="图解法"><a href="#图解法" class="headerlink" title="图解法"></a>图解法</h3><p>● 可行解空间</p>
+<p>● 可行点 —&gt; 最优解</p>
+<h3 id="工程应用"><a href="#工程应用" class="headerlink" title="工程应用"></a>工程应用</h3>]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>最优化</tag>
       </tags>
   </entry>
   <entry>
@@ -527,8 +665,22 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
 <p>​    - 上机实践（50机时），占比40% – 12月底检查作业</p>
 ]]></content>
       <categories>
-        <category>study</category>
+        <category>cs</category>
       </categories>
+  </entry>
+  <entry>
+    <title>博客搭建指南</title>
+    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
+<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
+<p>这样就可以大概搭建出一个博客的雏形了。</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>日常知识</tag>
+      </tags>
   </entry>
   <entry>
     <title>大三上学习规划</title>
@@ -577,42 +729,6 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
       </categories>
       <tags>
         <tag>生活感悟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>optimization</title>
-    <url>/2022/09/01/optimization-1/</url>
-    <content><![CDATA[<h1 id="线性规划基本原理与基本算法"><a href="#线性规划基本原理与基本算法" class="headerlink" title="线性规划基本原理与基本算法"></a>线性规划基本原理与基本算法</h1><h2 id="最优化方法的基本模型"><a href="#最优化方法的基本模型" class="headerlink" title="最优化方法的基本模型"></a>最优化方法的基本模型</h2><h3 id="最优化问题的思路"><a href="#最优化问题的思路" class="headerlink" title="最优化问题的思路"></a>最优化问题的思路</h3><p>● 可能的决策方案</p>
-<p>● 限制条件</p>
-<p>● 目标的评判标准</p>
-<h3 id="最优化模型"><a href="#最优化模型" class="headerlink" title="最优化模型"></a>最优化模型</h3><p>● 可行解：满足所有约束条件的模型的解</p>
-<p>● 不可行解：</p>
-<p>● 最优解：可行解的基础上，取得了目标函数的最佳值</p>
-<h4 id="最优化模型表示的通用格式"><a href="#最优化模型表示的通用格式" class="headerlink" title="最优化模型表示的通用格式"></a>最优化模型表示的通用格式</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">min或max    目标函数</span><br><span class="line">s.t.    约束条件</span><br></pre></td></tr></table></figure>
-<h2 id="最优化方法的基本步骤"><a href="#最优化方法的基本步骤" class="headerlink" title="最优化方法的基本步骤"></a>最优化方法的基本步骤</h2><p>● 问题定义 —&gt; 模型构造 —&gt; 模型求解 —&gt; 模型验证</p>
-<h3 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h3><p>● 找出最优化问题的三个因素</p>
-<p>​    ◇ 可能的决策方案</p>
-<p>​    ◇ 限制条件</p>
-<p>​    ◇ 最优化目标</p>
-<h3 id="模型构造"><a href="#模型构造" class="headerlink" title="模型构造"></a>模型构造</h3><p>● 将问题定义转换为数学关系，将要产生的模型成为某种数学模型：</p>
-<p>​    ◇ 线性规划</p>
-<p>​    ◇ 整数规划、动态规划、网络规划</p>
-<p>​    ◇ 非线性规划</p>
-<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>● 利用成熟的最优化算法进行求解</p>
-<p>● 灵敏度分析：了解当模型参数改变时，最优解会有怎样的表现</p>
-<h3 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h3><p>● 一般方法：把模型的输出结果与历史的输出结果进行比较</p>
-<p>● 判断标准：如果模型是基于对历史数据的仔细分析，输出结果应该优于历史结果</p>
-<h2 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h2><h3 id="二维变量的线性规划模型"><a href="#二维变量的线性规划模型" class="headerlink" title="二维变量的线性规划模型"></a>二维变量的线性规划模型</h3><p>● 寻找并确定决策变量</p>
-<p>● 优化(求极大或极小的)目标函数</p>
-<p>● 解必须满足的约束条件</p>
-<h3 id="图解法"><a href="#图解法" class="headerlink" title="图解法"></a>图解法</h3><p>● 可行解空间</p>
-<p>● 可行点 —&gt; 最优解</p>
-<h3 id="工程应用"><a href="#工程应用" class="headerlink" title="工程应用"></a>工程应用</h3>]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>最优化</tag>
       </tags>
   </entry>
 </search>

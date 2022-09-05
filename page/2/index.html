@@ -192,6 +192,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/29/compile-1-basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Jackrbkd">
+      <meta itemprop="description" content="bhggsg&学习笔记、生活见闻">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackrbkd & 博客小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/29/compile-1-basic/" class="post-title-link" itemprop="url">compile1_basic</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-29 09:49:47" itemprop="dateCreated datePublished" datetime="2022-08-29T09:49:47+08:00">2022-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 20:04:54" itemprop="dateModified" datetime="2022-09-05T20:04:54+08:00">2022-09-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cs/" itemprop="url" rel="index"><span itemprop="name">cs</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="源程序—-gt-目标程序：翻译程序"><a href="#源程序—-gt-目标程序：翻译程序" class="headerlink" title="源程序—&gt;目标程序：翻译程序"></a>源程序—&gt;目标程序：翻译程序</h1><p>翻译程序：汇编程序/编译程序</p>
+<p>汇编程序：汇编语言—&gt;机器语言，此时翻译程序称之为汇编程序，翻译过程称之为“汇编”</p>
+<p>编译程序：高级语言—&gt;目标程序，此时翻译过程称之为“编译”</p>
+<h1 id="解释程序：对源程序进行解释执行的程序"><a href="#解释程序：对源程序进行解释执行的程序" class="headerlink" title="解释程序：对源程序进行解释执行的程序"></a>解释程序：对源程序进行<em>解释执行</em>的程序</h1><p>一般来说，从源程序到输出最终的结果有三种路径。</p>
+<p>FirstPath : 源程序经过翻译程序转换为目标程序；数据输入到目标程序+运行时库程序，获得输出</p>
+<p>SecondPath：将数据和源程序都输入到解释程序中，获得输出</p>
+<p>ThirdPath：源程序通过编译程序转换为源程序的中间形式；之后将数据和源程序的中间形式作为输入，获得输出</p>
+<h1 id="编译过程：将高级语言程序翻译为语义等价的目标程序的过程"><a href="#编译过程：将高级语言程序翻译为语义等价的目标程序的过程" class="headerlink" title="编译过程：将高级语言程序翻译为语义等价的目标程序的过程"></a>编译过程：将高级语言程序翻译为语义等价的目标程序的过程</h1><p>●五个基本阶段：词法分析—&gt;语法分析—&gt;语义分析、生成中间代码—&gt;代码优化—&gt;生成目标程序</p>
+<h2 id="词法分析：分析和识别单词"><a href="#词法分析：分析和识别单词" class="headerlink" title="词法分析：分析和识别单词"></a>词法分析：分析和识别单词</h2><p>●单词：是语言的基本语法单位，一般语言有四大类单词</p>
+<pre><code>&lt;1&gt;语言定义的关键字或保留字（如BEGIN、END、IF）
+
+&lt;2&gt;标识符
+
+&lt;3&gt;常数
+
+&lt;4&gt;分界符（运算符） （如+、-、*、/、;、（、） ……）
+</code></pre><h2 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h2><p>●根据语法规则（即语言的文法），分析并识别出各种语法成分，如表达式、各种说明、各种语句、过程、函数等，</p>
+<pre><code>并进行语法正确性检查。
+</code></pre><h2 id="语义分析、生成中间代码"><a href="#语义分析、生成中间代码" class="headerlink" title="语义分析、生成中间代码"></a>语义分析、生成中间代码</h2><p>●对识别出的各种语法成分进行语义分析，并产生相应的中间代码</p>
+<p>●中间代码：一种介于源语言和目标语言之间的中间语言形式</p>
+<pre><code>目的：便于做优化处理；便于编译程序的移植
+
+形式：四元式、三元式、逆波兰表示
+
+四元式（三地址指令）：？
+</code></pre><h2 id="代码优化：得到高质量的目标程序"><a href="#代码优化：得到高质量的目标程序" class="headerlink" title="代码优化：得到高质量的目标程序"></a>代码优化：得到高质量的目标程序</h2><h2 id="生成目标程序-保持语义等价性"><a href="#生成目标程序-保持语义等价性" class="headerlink" title="生成目标程序(保持语义等价性)"></a>生成目标程序(保持语义等价性)</h2><p>●由中间代码很容易生成目标程序（地址指令序列）。</p>
+<pre><code>这部分工作与机器关系密切 ，所以要根据机器进行。
+
+在做这部分工作时（要注意充分利用目标机特性），也可以进行优化处理。
+</code></pre><h1 id="编译程序构造"><a href="#编译程序构造" class="headerlink" title="编译程序构造"></a>编译程序构造</h1><h2 id="编译程序的逻辑结构"><a href="#编译程序的逻辑结构" class="headerlink" title="编译程序的逻辑结构"></a>编译程序的逻辑结构</h2><p>●按逻辑功能不同，可将编译过程划分为五个基本阶段，与此相对应，我们将实现整个编译过程的编译程序划分为五个逻辑阶段（即五个逻辑子过程）。</p>
+<p>●在上面五个阶段中都要做两件事：建表和查表；出错处理</p>
+<p>●符号表管理</p>
+<pre><code>及时地把源程序中的信息和编译过程中产生的信息记在表格中，在随后的编译过程中要不断查找这些表格中的信息。
+</code></pre><p>●出错处理</p>
+<pre><code>诊察错误并报告用户错误的性质和位置
+</code></pre><p>●综上，典型的编译程序应该有七个逻辑部分：</p>
+<pre><code>符号表管理+出错处理
+
+词法分析程序--&gt;语法分析程序--&gt;语义分析、生成中间代码--&gt;代码优化程序--&gt;生成目标程序
+</code></pre><h1 id="遍"><a href="#遍" class="headerlink" title="遍"></a>遍</h1><p>●对源程序(包括源程序中间形式)从头到尾扫描次，并作有关的加工处理，生成新的源程序中间形式或目标程序，通常称之为一遍</p>
+<p>●一遍扫描编译程序：一遍扫描即可完成整个编译工作的成为一遍扫描编译程序</p>
+<h2 id="遍vs基本阶段"><a href="#遍vs基本阶段" class="headerlink" title="遍vs基本阶段"></a>遍vs基本阶段</h2><p>●五个基本阶段：将源程序翻译为目标程序在逻辑上要完成的工作</p>
+<p>●遍：完成上面五个基本阶段的工作，要经过几次扫描处理</p>
+<h1 id="前端和后端"><a href="#前端和后端" class="headerlink" title="前端和后端"></a>前端和后端</h1><p>●编译程序根据功能分为前端和后端</p>
+<p>●前端：与源程序有关的编译部分。</p>
+<pre><code>           词法分析、语法分析、语义分析、中间代码生成    ---分析部分
+
+           feature：与*源语言*有关
+</code></pre><p>●后端：与目标机有关的部分</p>
+<pre><code>            代码优化、目标代码生成
+
+            feature：与*目标机*有关
+</code></pre><h1 id="编译程序的前后处理器"><a href="#编译程序的前后处理器" class="headerlink" title="编译程序的前后处理器"></a>编译程序的前后处理器</h1><p>●源程序：多文件、宏定义和宏调用，包含文件</p>
+<p>●目标程序：一般为汇编程序或可重定位的机器代码</p>
+<p>●流程：?</p>
+<p>框架源程序—&gt;源程序(预处理器，替换宏etc)</p>
+<p><em>源程序</em>—&gt;目标程序(编译程序)</p>
+<p>目标程序—&gt;<em>可重定位机器码Obj文件</em>(汇编程序)    #源程序通过编译程序可直接转换为可重定位机器码Obj文件</p>
+<p>可重定位机器码文件组—&gt;可执行程序，exe、a.out…(链接，库目标、可重定位目标文件)</p>
+<p>可执行程序，exe、a.out…—&gt;可运行的及其代码(加载器)</p>
+<h1 id="编译技术的应用"><a href="#编译技术的应用" class="headerlink" title="编译技术的应用"></a>编译技术的应用</h1><p>●语法制导的结构化编辑器</p>
+<p>●程序格式化工具</p>
+<p>●软件测试工具</p>
+<p>●程序理解工具</p>
+<p>●高级语言的翻译工具</p>
+<p>●etc</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/26/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -215,10 +354,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-26 09:28:10 / 修改时间：09:55:10" itemprop="dateCreated datePublished" datetime="2022-08-26T09:28:10+08:00">2022-08-26</time>
+              <time title="创建时间：2022-08-26 09:28:10" itemprop="dateCreated datePublished" datetime="2022-08-26T09:28:10+08:00">2022-08-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 20:01:34" itemprop="dateModified" datetime="2022-09-05T20:01:34+08:00">2022-09-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -496,14 +641,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -662,6 +807,61 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
