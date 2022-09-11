@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="bhggsg&amp;学习笔记、生活见闻">
+  <meta name="description" content="绪论算法的由来算法的定义● 计算问题定义：给定数据输入，计算满足某种性质输出的问题 ● 算法定义：给定计算问题，算法是一系列良定义的计算步骤，注意执行计算步骤即可获得预期的输出 ​    - 良定义：定义明确无歧义 ​    - 计算步骤：计算机可实现的指令 ● 例子：排序问题 ​    - 插入排序：将待排序元素依次插入已排序部分，保持已排序部分所要求的性质 ​    - 选择排序：依次遍历剩余">
 <meta property="og:type" content="article">
 <meta property="og:title" content="algorithm-1">
 <meta property="og:url" content="http://example.com/2022/08/30/algorithm-1/index.html">
 <meta property="og:site_name" content="Jackrbkd &amp; 博客小屋">
-<meta property="og:description" content="bhggsg&amp;学习笔记、生活见闻">
+<meta property="og:description" content="绪论算法的由来算法的定义● 计算问题定义：给定数据输入，计算满足某种性质输出的问题 ● 算法定义：给定计算问题，算法是一系列良定义的计算步骤，注意执行计算步骤即可获得预期的输出 ​    - 良定义：定义明确无歧义 ​    - 计算步骤：计算机可实现的指令 ● 例子：排序问题 ​    - 插入排序：将待排序元素依次插入已排序部分，保持已排序部分所要求的性质 ​    - 选择排序：依次遍历剩余">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T07:08:29.000Z">
-<meta property="article:modified_time" content="2022-09-05T12:04:39.822Z">
+<meta property="article:modified_time" content="2022-09-05T14:32:06.392Z">
 <meta property="article:author" content="Jackrbkd">
 <meta property="article:tag" content="算法导论">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-05 20:04:39" itemprop="dateModified" datetime="2022-09-05T20:04:39+08:00">2022-09-05</time>
+                <time title="修改时间：2022-09-05 22:32:06" itemprop="dateModified" datetime="2022-09-05T22:32:06+08:00">2022-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,7 +248,79 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="算法的由来"><a href="#算法的由来" class="headerlink" title="算法的由来"></a>算法的由来</h2><h2 id="算法的定义"><a href="#算法的定义" class="headerlink" title="算法的定义"></a>算法的定义</h2><p>● 计算问题定义：给定数据输入，计算满足某种性质输出的问题</p>
+<p>● 算法定义：给定计算问题，算法是一系列良定义的计算步骤，注意执行计算步骤即可获得预期的输出</p>
+<p>​    - 良定义：定义明确无歧义</p>
+<p>​    - 计算步骤：计算机可实现的指令</p>
+<p>● 例子：排序问题</p>
+<p>​    - 插入排序：将待排序元素依次插入已排序部分，保持已排序部分所要求的性质</p>
+<p>​    - 选择排序：依次遍历剩余数组找到最符合要求的元素，直至剩余数组为空</p>
+<h2 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h2><h3 id="有穷性"><a href="#有穷性" class="headerlink" title="有穷性"></a>有穷性</h3><p>● 含义：算法必须在有限个计算步骤后终止</p>
+<p>​    反例：给定输入数组，不断交换首尾元素位置</p>
+<h3 id="确定性"><a href="#确定性" class="headerlink" title="确定性"></a>确定性</h3><p>● 含义：算法必须是没有歧义的</p>
+<p>​    反例：对于给定输入数组，交换两个数的位置</p>
+<h3 id="可行性"><a href="#可行性" class="headerlink" title="可行性"></a>可行性</h3><p>● 含义：可以机械地一步一步执行基本操作步骤</p>
+<p>​    反例：将大元素放数组后部，小元素放数组前部</p>
+<h2 id="算法的表示"><a href="#算法的表示" class="headerlink" title="算法的表示"></a>算法的表示</h2><h3 id="自然语言"><a href="#自然语言" class="headerlink" title="自然语言"></a>自然语言</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>贴近人类思维，易于理解</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>繁琐、歧义、不严谨</p>
+<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><p>精确，无歧义</p>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><p>不同编程语言间语法存在差异</p>
+<p>过于关注算法的实现细节</p>
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><p>● 兼顾自然语言与编程语言优势</p>
+<p>​    - 简洁表达算法本质，不拘泥于实现细节</p>
+<p>​    - 准确反映算法过程，不产生矛盾与歧义</p>
+<p>● 非正式语言</p>
+<p>​    - 移植编程语言书写形式作为基础和框架</p>
+<p>​    - 按照自然语言的形式表达算法过程</p>
+<p>● 书写约定</p>
+<p>◇ 先明确输入输出：</p>
+<p>​    输入：…</p>
+<p>​    输出：…</p>
+<p>◇ 循环、条件语句块要缩进</p>
+<p>◇ 赋值语句：</p>
+<p>​    $j \leftarrow i + 1$</p>
+<p>◇ 注释：</p>
+<p>​    使用”//“</p>
+<p>◇ 不关注实现细节：</p>
+<p>​    例子：可以直接写交换A[i] 和 A[cur_min_pos]</p>
+<h2 id="算法的分析"><a href="#算法的分析" class="headerlink" title="算法的分析"></a>算法的分析</h2><h3 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h3><h4 id="归纳基本操作"><a href="#归纳基本操作" class="headerlink" title="归纳基本操作"></a>归纳基本操作</h4><p>● 运算、赋值、比较</p>
+<h4 id="统一机器性能"><a href="#统一机器性能" class="headerlink" title="统一机器性能"></a>统一机器性能</h4><p>● 假设基本操作代价均为1</p>
+<h4 id="分析最坏情况"><a href="#分析最坏情况" class="headerlink" title="分析最坏情况"></a>分析最坏情况</h4><p>● 实例存在最好情况(无普遍性)、一般情况(复杂)、最坏情况(确定上界，更具一般性)</p>
+<p>● 综上，算法运行时间金依赖于问题输入规模n，表示为T(n)</p>
+<h4 id="算法分析的工具：渐近分析"><a href="#算法分析的工具：渐近分析" class="headerlink" title="算法分析的工具：渐近分析"></a>算法分析的工具：渐近分析</h4><p>● 渐近分析：分析n充分大时函数的大小关系，并用渐近记号表示</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>渐进记号</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$T(n) = \Theta(g(n))$</td>
+<td>渐近紧确界</td>
+</tr>
+<tr>
+<td>$T(n) = \Omicron(g(n))$</td>
+<td>渐近上界</td>
+</tr>
+<tr>
+<td>$T(n) = \Omega(g(n))$</td>
+<td>渐近下界</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>● 算法运行时间成为算法的时间复杂度，通常使用渐近记号$\Omicron$(渐近上界…?)来表示。</p>
+<!--有点怪，我觉得单单渐近上界的限制太不精确了-->
+<h5 id="渐近紧确界"><a href="#渐近紧确界" class="headerlink" title="渐近紧确界"></a>渐近紧确界</h5><p>● 定义：对于给定的函数g(n)，$\Theta(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Theta(g(n)) = \{T(n) : \exists c_1,c_2,n_0 > 0, s.t. \forall n \ge n_0, c_1g(n) \le T(n) \le c_2g(n) \}</script><h5 id="渐近上界"><a href="#渐近上界" class="headerlink" title="渐近上界"></a>渐近上界</h5><p>● 定义：对于给定的函数g(n)，$\Omicron(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Omicron(g(n)) = \{T(n) : \exist c,n_0 > 0, s.t. \forall n \ge n_0, 0 \le T(n) \le cg(n)\}</script><h5 id="渐近下界"><a href="#渐近下界" class="headerlink" title="渐近下界"></a>渐近下界</h5><p>● 定义：对于给定的函数g(n)，$\Omega(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Omega(g(n)) = \{T(n): \exist c,n_0 > 0, s.t. \forall n \ge n_0, 0 \le cg(n) \le T(n)\}</script>
     </div>
 
     
@@ -266,7 +338,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/08/30/database-0-intro/" rel="prev" title="database_1">
+    <a href="/2022/08/30/database-1-intro/" rel="prev" title="database_1">
       <i class="fa fa-chevron-left"></i> database_1
     </a></div>
       <div class="post-nav-item">
@@ -332,6 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="nav-number">1.1.</span> <span class="nav-text">算法的由来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.</span> <span class="nav-text">算法的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.</span> <span class="nav-text">算法的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%A9%B7%E6%80%A7"><span class="nav-number">1.3.1.</span> <span class="nav-text">有穷性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="nav-number">1.3.2.</span> <span class="nav-text">确定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A1%8C%E6%80%A7"><span class="nav-number">1.3.3.</span> <span class="nav-text">可行性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.4.</span> <span class="nav-text">算法的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80"><span class="nav-number">1.4.1.</span> <span class="nav-text">自然语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="nav-number">1.4.2.</span> <span class="nav-text">编程语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF-1"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">伪代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">算法的分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="nav-number">1.5.1.</span> <span class="nav-text">性能比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%92%E7%BA%B3%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">归纳基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%9F%E4%B8%80%E6%9C%BA%E5%99%A8%E6%80%A7%E8%83%BD"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">统一机器性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">分析最坏情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%9A%E6%B8%90%E8%BF%91%E5%88%86%E6%9E%90"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">算法分析的工具：渐近分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B8%90%E8%BF%91%E7%B4%A7%E7%A1%AE%E7%95%8C"><span class="nav-number">1.5.1.4.1.</span> <span class="nav-text">渐近紧确界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B8%90%E8%BF%91%E4%B8%8A%E7%95%8C"><span class="nav-number">1.5.1.4.2.</span> <span class="nav-text">渐近上界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B8%90%E8%BF%91%E4%B8%8B%E7%95%8C"><span class="nav-number">1.5.1.4.3.</span> <span class="nav-text">渐近下界</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -347,7 +420,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

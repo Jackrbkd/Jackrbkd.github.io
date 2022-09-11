@@ -3,6 +3,89 @@
   <entry>
     <title>algorithm-1</title>
     <url>/2022/08/30/algorithm-1/</url>
+    <content><![CDATA[<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="算法的由来"><a href="#算法的由来" class="headerlink" title="算法的由来"></a>算法的由来</h2><h2 id="算法的定义"><a href="#算法的定义" class="headerlink" title="算法的定义"></a>算法的定义</h2><p>● 计算问题定义：给定数据输入，计算满足某种性质输出的问题</p>
+<p>● 算法定义：给定计算问题，算法是一系列良定义的计算步骤，注意执行计算步骤即可获得预期的输出</p>
+<p>​    - 良定义：定义明确无歧义</p>
+<p>​    - 计算步骤：计算机可实现的指令</p>
+<p>● 例子：排序问题</p>
+<p>​    - 插入排序：将待排序元素依次插入已排序部分，保持已排序部分所要求的性质</p>
+<p>​    - 选择排序：依次遍历剩余数组找到最符合要求的元素，直至剩余数组为空</p>
+<h2 id="算法的性质"><a href="#算法的性质" class="headerlink" title="算法的性质"></a>算法的性质</h2><h3 id="有穷性"><a href="#有穷性" class="headerlink" title="有穷性"></a>有穷性</h3><p>● 含义：算法必须在有限个计算步骤后终止</p>
+<p>​    反例：给定输入数组，不断交换首尾元素位置</p>
+<h3 id="确定性"><a href="#确定性" class="headerlink" title="确定性"></a>确定性</h3><p>● 含义：算法必须是没有歧义的</p>
+<p>​    反例：对于给定输入数组，交换两个数的位置</p>
+<h3 id="可行性"><a href="#可行性" class="headerlink" title="可行性"></a>可行性</h3><p>● 含义：可以机械地一步一步执行基本操作步骤</p>
+<p>​    反例：将大元素放数组后部，小元素放数组前部</p>
+<h2 id="算法的表示"><a href="#算法的表示" class="headerlink" title="算法的表示"></a>算法的表示</h2><h3 id="自然语言"><a href="#自然语言" class="headerlink" title="自然语言"></a>自然语言</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>贴近人类思维，易于理解</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>繁琐、歧义、不严谨</p>
+<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><p>精确，无歧义</p>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><p>不同编程语言间语法存在差异</p>
+<p>过于关注算法的实现细节</p>
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><p>● 兼顾自然语言与编程语言优势</p>
+<p>​    - 简洁表达算法本质，不拘泥于实现细节</p>
+<p>​    - 准确反映算法过程，不产生矛盾与歧义</p>
+<p>● 非正式语言</p>
+<p>​    - 移植编程语言书写形式作为基础和框架</p>
+<p>​    - 按照自然语言的形式表达算法过程</p>
+<p>● 书写约定</p>
+<p>◇ 先明确输入输出：</p>
+<p>​    输入：…</p>
+<p>​    输出：…</p>
+<p>◇ 循环、条件语句块要缩进</p>
+<p>◇ 赋值语句：</p>
+<p>​    $j \leftarrow i + 1$</p>
+<p>◇ 注释：</p>
+<p>​    使用”//“</p>
+<p>◇ 不关注实现细节：</p>
+<p>​    例子：可以直接写交换A[i] 和 A[cur_min_pos]</p>
+<h2 id="算法的分析"><a href="#算法的分析" class="headerlink" title="算法的分析"></a>算法的分析</h2><h3 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h3><h4 id="归纳基本操作"><a href="#归纳基本操作" class="headerlink" title="归纳基本操作"></a>归纳基本操作</h4><p>● 运算、赋值、比较</p>
+<h4 id="统一机器性能"><a href="#统一机器性能" class="headerlink" title="统一机器性能"></a>统一机器性能</h4><p>● 假设基本操作代价均为1</p>
+<h4 id="分析最坏情况"><a href="#分析最坏情况" class="headerlink" title="分析最坏情况"></a>分析最坏情况</h4><p>● 实例存在最好情况(无普遍性)、一般情况(复杂)、最坏情况(确定上界，更具一般性)</p>
+<p>● 综上，算法运行时间金依赖于问题输入规模n，表示为T(n)</p>
+<h4 id="算法分析的工具：渐近分析"><a href="#算法分析的工具：渐近分析" class="headerlink" title="算法分析的工具：渐近分析"></a>算法分析的工具：渐近分析</h4><p>● 渐近分析：分析n充分大时函数的大小关系，并用渐近记号表示</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>渐进记号</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$T(n) = \Theta(g(n))$</td>
+<td>渐近紧确界</td>
+</tr>
+<tr>
+<td>$T(n) = \Omicron(g(n))$</td>
+<td>渐近上界</td>
+</tr>
+<tr>
+<td>$T(n) = \Omega(g(n))$</td>
+<td>渐近下界</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>● 算法运行时间成为算法的时间复杂度，通常使用渐近记号$\Omicron$(渐近上界…?)来表示。</p>
+<!--有点怪，我觉得单单渐近上界的限制太不精确了-->
+<h5 id="渐近紧确界"><a href="#渐近紧确界" class="headerlink" title="渐近紧确界"></a>渐近紧确界</h5><p>● 定义：对于给定的函数g(n)，$\Theta(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Theta(g(n)) = \{T(n) : \exists c_1,c_2,n_0 > 0, s.t. \forall n \ge n_0, c_1g(n) \le T(n) \le c_2g(n) \}</script><h5 id="渐近上界"><a href="#渐近上界" class="headerlink" title="渐近上界"></a>渐近上界</h5><p>● 定义：对于给定的函数g(n)，$\Omicron(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Omicron(g(n)) = \{T(n) : \exist c,n_0 > 0, s.t. \forall n \ge n_0, 0 \le T(n) \le cg(n)\}</script><h5 id="渐近下界"><a href="#渐近下界" class="headerlink" title="渐近下界"></a>渐近下界</h5><p>● 定义：对于给定的函数g(n)，$\Omega(g(n))$表示以下函数的集合：</p>
+<script type="math/tex; mode=display">
+\Omega(g(n)) = \{T(n): \exist c,n_0 > 0, s.t. \forall n \ge n_0, 0 \le cg(n) \le T(n)\}</script>]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>算法导论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>algorithm-2</title>
+    <url>/2022/09/06/algorithm-2/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>cs</category>
@@ -91,18 +174,12 @@
   <entry>
     <title>android-1</title>
     <url>/2022/09/02/android-1/</url>
-    <content><![CDATA[<p>无限通讯技术发展</p>
-<p>● 从1G到5G</p>
-<p>无限通讯：传输电磁波</p>
-<p>频率越来越高，波长越来越小(波长越来越小就要求基站越来越多才OK，5G很烧钱！)</p>
-<p>基站越来越密</p>
-<p>1G(1985)：模拟信号，只能通话</p>
-<p>2G(1990)：数字信号(32Kbps)，语音和短信，支持GSM小规模数据传输</p>
-<p>3G()：较高频宽(2Mbps)，蜂窝网络，3G移动通讯标准，TD-SCDMA多媒体通讯</p>
-<p>4G()：高频宽(100Mbps)，全方位网络</p>
-<p>5G()：超高频宽(2.5Gbps)，物联网，整合物联网的全新网络</p>
-<p>● 安卓系统和苹果系统</p>
-<div class="table-container">
+    <content><![CDATA[<p>——仅仅简单总结，主要在于实践</p>
+<h1 id="无线通讯技术发展"><a href="#无线通讯技术发展" class="headerlink" title="无线通讯技术发展"></a>无线通讯技术发展</h1><p>● 从1G到5G</p>
+<p>● 无线通讯：传输电磁波</p>
+<p>● 频率越来越高，波长越来越小(波长越来越小就要求基站越来越多才OK，5G很烧钱！)</p>
+<p>● 基站越来越密</p>
+<h1 id="安卓系统和苹果系统"><a href="#安卓系统和苹果系统" class="headerlink" title="安卓系统和苹果系统"></a>安卓系统和苹果系统</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -110,9 +187,9 @@
 <th>开发平台</th>
 <th>开发理念</th>
 <th>运行机制</th>
-<th></th>
-<th></th>
-<th></th>
+<th>硬件使用效率</th>
+<th>程序优化机制</th>
+<th>系统安全性</th>
 </tr>
 </thead>
 <tbody>
@@ -136,13 +213,51 @@
 </tbody>
 </table>
 </div>
-<p>● 移动应用程序开发趋势</p>
-<p>Android</p>
-<p>三大优势：开放性；定制化；免费用</p>
-<p>开发趋势：</p>
-<p>系统碎片化：ROM定制</p>
-<p>屏幕碎片化：适配尺寸</p>
-]]></content>
+<p>● OHA</p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p>● 三大优势：开放性；定制化；免费用</p>
+<p>● 开发趋势：</p>
+<p>​    - 系统碎片化：ROM定制</p>
+<p>​    - 屏幕碎片化：适配尺寸</p>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>● 层内高内聚，层间低耦合</p>
+<h3 id="Linux内核层"><a href="#Linux内核层" class="headerlink" title="Linux内核层"></a>Linux内核层</h3><p>● 提供核心服务</p>
+<p>​    - 硬件驱动</p>
+<p>​    - 进程管理</p>
+<p>​    - 内存管理</p>
+<p>​    - 网络连接</p>
+<p>​    - 安全防护</p>
+<h3 id="系统运行库层"><a href="#系统运行库层" class="headerlink" title="系统运行库层"></a>系统运行库层</h3><p>● 提供主要特性支持</p>
+<p>​    - 数据库</p>
+<p>​    - 3D绘图</p>
+<p>​    - 浏览器</p>
+<p>​    - JAVA编程</p>
+<p>​    - 虚拟机</p>
+<h3 id="应用框架层"><a href="#应用框架层" class="headerlink" title="应用框架层"></a>应用框架层</h3><p>● 提供各种API</p>
+<p>供系统程序调用</p>
+<p>供开发程序调用</p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>● 提供各种应用程序</p>
+<p>邮件</p>
+<p>日历</p>
+<p>地图</p>
+<h2 id="四大组件"><a href="#四大组件" class="headerlink" title="四大组件"></a>四大组件</h2><h3 id="活动-Activity"><a href="#活动-Activity" class="headerlink" title="活动(Activity)"></a>活动(Activity)</h3><p>● 界面上显示的内容都要放在活动里</p>
+<p>● 一个APP可以包含0/多个活动</p>
+<p>● 当做屏幕、显示界面、用于交互</p>
+<p>● 用栈存储</p>
+<h4 id="新建活动"><a href="#新建活动" class="headerlink" title="新建活动"></a>新建活动</h4><h4 id="新建布局"><a href="#新建布局" class="headerlink" title="新建布局"></a>新建布局</h4><h4 id="重写onCreate"><a href="#重写onCreate" class="headerlink" title="重写onCreate"></a>重写onCreate</h4><h4 id="注册活动"><a href="#注册活动" class="headerlink" title="注册活动"></a>注册活动</h4><h4 id="设主活动"><a href="#设主活动" class="headerlink" title="设主活动"></a>设主活动</h4><h4 id="启动活动"><a href="#启动活动" class="headerlink" title="启动活动"></a>启动活动</h4><h4 id="关闭活动"><a href="#关闭活动" class="headerlink" title="关闭活动"></a>关闭活动</h4><h4 id="活动的生命周期"><a href="#活动的生命周期" class="headerlink" title="活动的生命周期"></a>活动的生命周期</h4><p>运行：处在栈顶</p>
+<p>暂停：不在栈顶，但可见</p>
+<p>停止：不在栈顶，且完全不可见</p>
+<p>销毁：从栈移除</p>
+<h4 id="回调方法"><a href="#回调方法" class="headerlink" title="回调方法"></a>回调方法</h4><p>在事件发生时被自动调用</p>
+<p>onCreate()：活动创建时</p>
+<p>onStart()：活动由不可见变为可见</p>
+<p>onResume()：准备好和用户交互时</p>
+<p>onPause()：系统准备去启动或恢复另一个活动时</p>
+<p>onStop()：活动完全不可见时被自动时</p>
+<p>onDestroy()：活动被销毁之前，销毁状态</p>
+<p>onRestart()：活动由停止状态变为运行状态之前</p>
+<h4 id="活动的三种生存期"><a href="#活动的三种生存期" class="headerlink" title="活动的三种生存期"></a>活动的三种生存期</h4><p>完整生存期：</p>
+<p>可见生存期：</p>
+<p>前台生存期：</p>
+<h4 id="通信桥梁—Intent"><a href="#通信桥梁—Intent" class="headerlink" title="通信桥梁—Intent"></a>通信桥梁—Intent</h4><h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><h3 id="广播接收器"><a href="#广播接收器" class="headerlink" title="广播接收器"></a>广播接收器</h3><h3 id="内容提供器"><a href="#内容提供器" class="headerlink" title="内容提供器"></a>内容提供器</h3>]]></content>
       <categories>
         <category>cs</category>
       </categories>
@@ -286,9 +401,82 @@
       </tags>
   </entry>
   <entry>
+    <title>compile-4</title>
+    <url>/2022/09/08/compile-4/</url>
+    <content><![CDATA[<h1 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h1><h2 id="语法分析的功能、基本任务"><a href="#语法分析的功能、基本任务" class="headerlink" title="语法分析的功能、基本任务"></a>语法分析的功能、基本任务</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>根据文法规则，从源程序单词符号串中识别出语法成分，并进行语法检查</p>
+<h3 id="基本任务"><a href="#基本任务" class="headerlink" title="基本任务"></a>基本任务</h3><p>识别符号串S是否为某语法成分</p>
+<h3 id="两大类分析方法"><a href="#两大类分析方法" class="headerlink" title="两大类分析方法"></a>两大类分析方法</h3><p>自顶向下分析</p>
+<p>自底向上分析</p>
+<h2 id="自顶向下分析法"><a href="#自顶向下分析法" class="headerlink" title="自顶向下分析法"></a>自顶向下分析法</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>$若 Z \stackrel{+}{\underset{G[Z]}{\Rightarrow}} S,则 S \in L(G[Z]),否则 S \notin L(G[Z])$</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>左递归问题</p>
+<p>回溯问题</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>递归子程序法</p>
+<p>LL分析法</p>
+<h2 id="自底向上分析法"><a href="#自底向上分析法" class="headerlink" title="自底向上分析法"></a>自底向上分析法</h2><h3 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h3><p>$若 Z \stackrel{+}{\underset{G[Z]}{\Leftarrow}} S,则 S \in L(G[Z]),否则 S \notin L(G[Z])$</p>
+<h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>句柄的识别</p>
+<p>若两个以上规则的右部有相同的符号串且构成句柄，选哪个候选式</p>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><p>算符优先分析法</p>
+<p>LR分析法</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>编译技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>database_1</title>
+    <url>/2022/08/30/database-1-intro/</url>
+    <content><![CDATA[<h1 id="数据-amp-信息"><a href="#数据-amp-信息" class="headerlink" title="数据&amp;信息"></a>数据&amp;信息</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>●描述现实世界各种事物的可以识别的符号</p>
+<p>●有数字、文字、图形、图像、音视频等多种表现或存储形式</p>
+<p>●只有被组织和加工成信息，才具有使用价值</p>
+<h2 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h2><p>●信息是一种已经被加工为特定形式的数据，这些数据对现在和将来的决策有明显价值</p>
+<p>●信息是各种数据所包含的意义</p>
+<p>●数据是信息的载体，是信息的具体表现形式</p>
+<h1 id="数据处理-amp-数据管理"><a href="#数据处理-amp-数据管理" class="headerlink" title="数据处理&amp;数据管理"></a>数据处理&amp;数据管理</h1><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>●从大量原始数据中抽取和推导出有价值信息的加工过程</p>
+<p>●包括 ： 数据收集、组织、存储、加工、分类、检索、输出、传输等操作</p>
+<h2 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h2><p>●数据处理一般性的基本操作</p>
+<p>●如数据分类、组织、存储、检索、维护</p>
+<p>●研究专门的技术——数据管理技术</p>
+<h3 id="数据库技术"><a href="#数据库技术" class="headerlink" title="数据库技术"></a>数据库技术</h3><p>●是一种数据管理技术</p>
+<p>●按照某种数据结构对数据进行组织后，存储在计算机的二级存储中，可以提供数据共享操作</p>
+<p>●软件实现：数据库管理系统DBMS</p>
+<p>●数据库系统：基于数据库管理系统(DBMS)建立的具有特定数据处理功能的系统</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>compile-3</title>
     <url>/2022/09/05/compile-3/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>根据词法规则识别及组合单词，进行语法检查</p>
+<p>对数字常数完成数字字符串到(二进制)数值的转换</p>
+<p>删去空格字符和注解</p>
+<h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><h3 id="词法分析单独作为一遍"><a href="#词法分析单独作为一遍" class="headerlink" title="词法分析单独作为一遍"></a>词法分析单独作为一遍</h3><p>结构清晰，解耦 但 效率低</p>
+<h3 id="词法分析程序作为单独的子程序"><a href="#词法分析程序作为单独的子程序" class="headerlink" title="词法分析程序作为单独的子程序"></a>词法分析程序作为单独的子程序</h3><h2 id="单词种类及词法分析程序的输出形式"><a href="#单词种类及词法分析程序的输出形式" class="headerlink" title="单词种类及词法分析程序的输出形式"></a>单词种类及词法分析程序的输出形式</h2><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>保留字：begin、end、</p>
+<p>标识符：</p>
+<p>常数：无符号数、布尔常数、字符串常数等</p>
+<p>分界符：+-*/</p>
+<h3 id="输出形式"><a href="#输出形式" class="headerlink" title="输出形式"></a>输出形式</h3><p>单词类别|单词值</p>
+<h3 id="常用的单词内部形式"><a href="#常用的单词内部形式" class="headerlink" title="常用的单词内部形式"></a>常用的单词内部形式</h3><h4 id="按单词种类分类"><a href="#按单词种类分类" class="headerlink" title="按单词种类分类"></a>按单词种类分类</h4><p>标识符；无符号整数；无符号浮点数；布尔常数；字符串常数；<em>保留字</em>；<u>分界符</u></p>
+<h4 id="保留字和分界符采用一符一类"><a href="#保留字和分界符采用一符一类" class="headerlink" title="保留字和分界符采用一符一类"></a>保留字和分界符采用一符一类</h4><p>标识符；无符号整数；无符号浮点数；布尔常数；字符串常数；<em>BEGIN</em>；<em>END</em>；<u>+</u>；<u>*</u>;…</p>
+<h4 id="标识符和常数的单词值可为指示字-指针值"><a href="#标识符和常数的单词值可为指示字-指针值" class="headerlink" title="标识符和常数的单词值可为指示字(指针值)"></a>标识符和常数的单词值可为指示字(指针值)</h4><p>?</p>
+<h2 id="正则文法和状态图"><a href="#正则文法和状态图" class="headerlink" title="正则文法和状态图"></a>正则文法和状态图</h2><h3 id="状态图的画法"><a href="#状态图的画法" class="headerlink" title="状态图的画法"></a>状态图的画法</h3><p>令G的每个非终结符都是一个状态</p>
+<p>设一个开始状态S</p>
+<p>若$Q::=t, Q \in V_n, t \in V_t$，则：<img src="C:\Users\Dell\rbkd_images\compile-3-1.png" alt="compile-3-1"></p>
+<p>若$Q::=Rt,Q，R \in V_n,t \in V_t$，则：</p>
+<p><img src="C:\Users\Dell\rbkd_images\compile-3-2.png" alt="compile-3-2"></p>
+<p>按自动机方法，可加上开始状态和终止状态标志</p>
+<h3 id="识别算法：利用状态机识别字符串x"><a href="#识别算法：利用状态机识别字符串x" class="headerlink" title="识别算法：利用状态机识别字符串x"></a>识别算法：利用状态机识别字符串x</h3><p>置初始状态为当前状态，从x的最左字符开始，重复步骤2，直到x右端为止</p>
+<p>扫描x的下一个字符，在当前状态射出弧中找该字符，沿此弧到下一个状态；若找不到该字符，x不是句子；若当前扫描的是x最右端字符且下一状态为终止状态，x是句子。</p>
+<p>自底向上，句柄确定(每一步都是句柄。。。？)</p>
+<h2 id="词法分析程序的设计与实现"><a href="#词法分析程序的设计与实现" class="headerlink" title="词法分析程序的设计与实现"></a>词法分析程序的设计与实现</h2><p>$词法规则 \rightarrow 状态图 \rightarrow 词法分析程序 $</p>
+<h3 id="文法及其状态图"><a href="#文法及其状态图" class="headerlink" title="文法及其状态图"></a>文法及其状态图</h3><h3 id="状态图的实现——构造此法分析程序"><a href="#状态图的实现——构造此法分析程序" class="headerlink" title="状态图的实现——构造此法分析程序"></a>状态图的实现——构造此法分析程序</h3>]]></content>
       <categories>
         <category>cs</category>
       </categories>
@@ -340,29 +528,405 @@
       </tags>
   </entry>
   <entry>
-    <title>database_1</title>
-    <url>/2022/08/30/database-0-intro/</url>
-    <content><![CDATA[<h1 id="数据-amp-信息"><a href="#数据-amp-信息" class="headerlink" title="数据&amp;信息"></a>数据&amp;信息</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>●描述现实世界各种事物的可以识别的符号</p>
-<p>●有数字、文字、图形、图像、音视频等多种表现或存储形式</p>
-<p>●只有被组织和加工成信息，才具有使用价值</p>
-<h2 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h2><p>●信息是一种已经被加工为特定形式的数据，这些数据对现在和将来的决策有明显价值</p>
-<p>●信息是各种数据所包含的意义</p>
-<p>●数据是信息的载体，是信息的具体表现形式</p>
-<h1 id="数据处理-amp-数据管理"><a href="#数据处理-amp-数据管理" class="headerlink" title="数据处理&amp;数据管理"></a>数据处理&amp;数据管理</h1><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>●从大量原始数据中抽取和推导出有价值信息的加工过程</p>
-<p>●包括 ： 数据收集、组织、存储、加工、分类、检索、输出、传输等操作</p>
-<h2 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h2><p>●数据处理一般性的基本操作</p>
-<p>●如数据分类、组织、存储、检索、维护</p>
-<p>●研究专门的技术——数据管理技术</p>
-<h3 id="数据库技术"><a href="#数据库技术" class="headerlink" title="数据库技术"></a>数据库技术</h3><p>●是一种数据管理技术</p>
-<p>●按照某种数据结构对数据进行组织后，存储在计算机的二级存储中，可以提供数据共享操作</p>
-<p>●软件实现：数据库管理系统DBMS</p>
-<p>●数据库系统：基于数据库管理系统(DBMS)建立的具有特定数据处理功能的系统</p>
+    <title>cpp-2</title>
+    <url>/2022/09/06/cpp-2/</url>
+    <content><![CDATA[<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1><p>overloading：重名函数，不同参数</p>
+<h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><h1 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h1><p>为程序的版本迭代留下空间。</p>
+<p>函数不一定用，但是调用者要传。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">(<span class="type">int</span> i)</span> <span class="title">throw</span> <span class="params">(<span class="type">int</span>,<span class="type">double</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">fun</span>(<span class="number">5</span>);</span><br><span class="line">    &#125; <span class="built_in">catch</span> (<span class="type">int</span> e / ... / <span class="type">double</span> d) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;exception code %d&quot;</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*...表示啥都catch，即既可以catch int，也可以catch double*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="属性-amp-行为"><a href="#属性-amp-行为" class="headerlink" title="属性&amp;行为"></a>属性&amp;行为</h3><h4 id="如何实现行为"><a href="#如何实现行为" class="headerlink" title="如何实现行为"></a>如何实现行为</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*比如我们定义了student类*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    <span class="type">char</span>* name;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">init_student</span><span class="params">(<span class="type">int</span> aid, <span class="type">char</span>* aname)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/*我们可以通过如下对方法进行描述*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Student::init_student</span><span class="params">(<span class="type">int</span> aid, <span class="type">char</span>* aname)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    id = aid;</span><br><span class="line">    name = aname;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*对象是一段连续的内存*/</span></span><br><span class="line">Student s1;</span><br><span class="line"><span class="built_in">sizeod</span>(s1); <span class="comment">/* = 8*/</span></span><br><span class="line"><span class="comment">/*类可以进行access control*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:<span class="comment">/*如果注释掉该词，class默认为private,struct默认为public。。。好像是这样?*/</span></span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    <span class="type">char</span>* name;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">init_student</span><span class="params">(<span class="type">int</span> aid, <span class="type">char</span>* aname)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>database-1-basic</title>
+    <url>/2022/08/30/database-2-basic/</url>
+    <content><![CDATA[<h1 id="数据管理技术的发展"><a href="#数据管理技术的发展" class="headerlink" title="数据管理技术的发展"></a>数据管理技术的发展</h1><p>——如何面对失败，把人分成了不同的样子</p>
+<h2 id="人工管理阶段"><a href="#人工管理阶段" class="headerlink" title="人工管理阶段"></a>人工管理阶段</h2><p>● 时间：20世纪50年代以前</p>
+<p>● 背景：</p>
+<p>​    - 外存仅磁带、卡片、纸带，没有磁盘等直接存取设备</p>
+<p>​    - 没有操作系统和数据管理软件，用户用机器指令编码</p>
+<p>​    - 计算机主要用于科学计算</p>
+<p>● 特点：</p>
+<p>​    - 数据不在计算机上保存</p>
+<p>​    - 没有软件系统对数据进行管理，程序规定数据的逻辑结构和物理结构，数据和程序不具有独立性</p>
+<p>​    - 基本没有文件概念，数据组织方式必须由程序员自行设计</p>
+<p>​    - 一组数据对应一个程序，数据是面向应用的，程序间不能共享数据</p>
+<h2 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h2><p>● 时间：20世纪50年代后期到60年代中期</p>
+<p>● 背景：</p>
+<p>​    - 外存出现磁盘、磁鼓等直接存取设备</p>
+<p>​    - 出现专门管理数据的软件，一般称为文件系统，包括在操作系统中</p>
+<p>​    - 计算机不但用于科学计算，还用于管理</p>
+<p>● 特点：</p>
+<p>​    - 数据以文件形式保留在外存上</p>
+<p>​    - 文件多样化</p>
+<p>​    - 数据的存取基本上以记录为单位</p>
+<p>​    - 程序和数据有<em>一定的</em>独立性（指物理独立，逻辑不独立）// mark一下，不理解欸</p>
+<p>​    - 文件和应用程序基本上是一一对应，数据共享性差，冗余度大</p>
+<p>● 问题：文件分散、相互独立，数据冗余度大，数据和程序缺乏独立性</p>
+<p>​    - 存储空间浪费</p>
+<p>​    - 容易造成数据的不一致性</p>
+<p>​    - 数据维护难度大</p>
+<p>​    - 程序维护工作量大</p>
+<h2 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h2><p>—详见下一篇blog~~</p>
 ]]></content>
       <categories>
         <category>cs</category>
       </categories>
       <tags>
         <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>database-2</title>
+    <url>/2022/09/06/database-3/</url>
+    <content><![CDATA[<h1 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h1><h2 id="时间-amp-背景"><a href="#时间-amp-背景" class="headerlink" title="时间&amp;背景"></a>时间&amp;背景</h2><p>● 时间：20世纪60年代后期开始</p>
+<p>● 背景：</p>
+<p>​    - 外存有了大容量磁盘、光盘</p>
+<p>​    - 计算机管理的数据量大，关系复杂，共享性要求强(多种应用、不同语言共享数据)</p>
+<p>​    - 软件价格上升，硬件价格下降，编制和维护软件及应用程序成本相对增加，其中维护的成本更高。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>● 突破文件系统分散管理的弱点，实现对数据的集中控制，统一管理</p>
+<h2 id="“集成”-amp-“共享”"><a href="#“集成”-amp-“共享”" class="headerlink" title="“集成”&amp;“共享”"></a>“集成”&amp;“共享”</h2><p>● 数据库中存储的数据是“集成的”和“共享的”：</p>
+<p>​    - “集成的”是指把特定应用环境中各种应用相关的数据及数据之间的联系全部地、集中地按照一定结构形式进行存储</p>
+<p>​    - “共享的”是指数据库中的数据可为多个不同的用户所共享</p>
+<h2 id="核心软件"><a href="#核心软件" class="headerlink" title="核心软件"></a>核心软件</h2><p>● 数据库管理系统DBMS</p>
+<p>​    - 最早的DBMS —— IMS，IDS</p>
+<h2 id="数据库技术要解决的基本问题"><a href="#数据库技术要解决的基本问题" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h2><p>​    - <em>集成</em>数据的表示</p>
+<p>​    - 统一管理下的数据<em>共享</em></p>
+<h2 id="解决基本问题的核心技术"><a href="#解决基本问题的核心技术" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h2><p>​    - 数据模型</p>
+<p>​    - 数据独立性 —&gt; 共享</p>
+<h2 id="数据库系统数据管理特点"><a href="#数据库系统数据管理特点" class="headerlink" title="数据库系统数据管理特点"></a>数据库系统数据管理特点</h2><h3 id="面向全组织的复杂的数据结构"><a href="#面向全组织的复杂的数据结构" class="headerlink" title="面向全组织的复杂的数据结构"></a>面向全组织的复杂的数据结构</h3><p>● 在描述数据时，不仅描述数据本身，还要描述数据之间的联系，使整个组织的数据结构化</p>
+<p>● 数据结构化是数据库的主要特征之一，是数据库和文件系统的<em>根本</em>区别。</p>
+<h3 id="数据冗余度小，易扩充"><a href="#数据冗余度小，易扩充" class="headerlink" title="数据冗余度小，易扩充"></a>数据冗余度小，易扩充</h3><p>● 数据库从整体观点描述数据。数据不再面向某个应用，而是面向整个系统，从而大大减小数据的冗余度；</p>
+<p>● 数据库数据的应用可以有很灵活的方式，可以取整体数据的各种合理子集用于不同的应用系统，并可以根据应用需求的变化，重新选取不同子集。</p>
+<h3 id="具有较高的数据和程序的独立性"><a href="#具有较高的数据和程序的独立性" class="headerlink" title="具有较高的数据和程序的独立性"></a>具有较高的数据和程序的独立性</h3><p>● 数据独立性：</p>
+<p>​    - 数据的物理独立性：数据的存储结构(物理结构)改变时，数据的逻辑结构可以不变，从而应用程序也不必改变</p>
+<p>​    - 数据的逻辑独立性：数据的逻辑结构改变时，应用程序可以不变</p>
+<p>● how？—&gt;  数据库提供了两方面的映像(转换)功能：</p>
+<p>​    - 数据的存储结构与逻辑结构之间的映像——实现数据的物理独立性</p>
+<p>​    - 数据的全局逻辑结构——实现数据的逻辑独立性</p>
+<!--依我之见，这个映像功能其实就是添加了中间层(接口)-->
+<p><img src="C:\Users\Dell\rbkd_images\database-1-1.png" alt="database-1-1"></p>
+<h3 id="统一的数据控制功能"><a href="#统一的数据控制功能" class="headerlink" title="统一的数据控制功能"></a>统一的数据控制功能</h3><p>● 数据的安全性控制：</p>
+<p>​    - 保护数据以防止不合法的使用所造成数据的泄密和破坏</p>
+<p>● 数据的完整性控制：</p>
+<p>​    - 指数据的正确性和相容性(一致性)</p>
+<p>● 并发控制：</p>
+<p>​    - 对多用户的并发操作进行控制、协调，保护数据的完整性</p>
+<p>● 数据库恢复</p>
+<p>​    - 将数据库从错误状态恢复到某一已知的正确状态</p>
+<h3 id="数据的最小存取单位是数据项"><a href="#数据的最小存取单位是数据项" class="headerlink" title="数据的最小存取单位是数据项"></a>数据的最小存取单位是数据项</h3><p>● 既可以存取一个或一组记录，也可以存取数据库中一个或一组数据项</p>
+<h2 id="数据库基本问题与关键技术"><a href="#数据库基本问题与关键技术" class="headerlink" title="数据库基本问题与关键技术"></a>数据库基本问题与关键技术</h2><h2 id="数据库技术要解决的基本问题-1"><a href="#数据库技术要解决的基本问题-1" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h2><p>​    - 集成数据的表示</p>
+<p>​    - 统一管理下的数据共享</p>
+<h3 id="解决基本问题的核心技术-1"><a href="#解决基本问题的核心技术-1" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h3><p>​    - 数据模型</p>
+<p>​    - 数据独立性</p>
+<h4 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h4><p>● 数据模型用来抽象和表示现实世界中的数据和信息：</p>
+<p>​    - 描述对象</p>
+<p>​    - 描述与表示的目标</p>
+<p>● 数据模型的层次</p>
+<script type="math/tex; mode=display">
+现实世界业务(业务数据)\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\Downarrow}数据的认识、抽象\\
+信息世界信息(概念模型,用于信息世界建模，是现实世界到信息世界的抽象，是用户和数据库设计人员进行交流的语言)\\
+\Downarrow转换\\
+机器世界数据(数据模型,用于机器世界，按计算机系统的观点对数据建模)</script><p>● 在数据库中，根据模型应用的不同目的，将模型分为两类或两个层次：</p>
+<p>​    - 概念模型(也称信息模型)</p>
+<p>​    - 数据模型(如层次、网状、关系模型)</p>
+<h4 id="数据模型之概念模型"><a href="#数据模型之概念模型" class="headerlink" title="数据模型之概念模型"></a>数据模型之概念模型</h4><p>● 概念模型基于信息世界的主要概念，表达应用中的各种语义(信息)</p>
+<p>● 具有较强的语义表达能力，能够方便、直接表达应用中的各种语义</p>
+<p>● 应该简单、清晰、易于理解</p>
+<p>● 最常用表示方法：实体——联系方法(E-R法)</p>
+<h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>● 实体(Entity)：客观存在并可相互区分的事物</p>
+<p>● 属性(Attribute)：实体所具有的某一属性</p>
+<p>● 码(Key)：唯一标识实体的属性集</p>
+<p>● 域(Domain)：某个(些)属性的取值范围</p>
+<p>● 实体型(Entity Type)：表示一类实体，用实体名及其属性名集合来抽象、刻画</p>
+<p>● 联系(Relation)：实体型之间的联系，是实体之间的相互关联</p>
+<p>​    - 名称</p>
+<p>​    - 类型：</p>
+<p>​        ◇ 一对一联系(1:1)</p>
+<p>​        ◇ 一对多联系(1:n)</p>
+<p>​        ◇ 多对多联系(m:n)</p>
+<p>​    - 可以具有属性</p>
+<h5 id="E-R法"><a href="#E-R法" class="headerlink" title="E-R法"></a>E-R法</h5><p>● 概述</p>
+<p>思想：</p>
+<p>​    - 用E-R图描述现实世界的信息，这种信息结构称为概念结构，然后根据具体系统的要求将概念结构转换成特定系统所能接受的逻辑结构(层次、网状、关系)</p>
+<p>操作步骤：</p>
+<p>​    - 用E-R图描述现实世界；</p>
+<p>​    - 将E-R图转换成相应的数据模型</p>
+<p>● E-R图的组成：实体、联系、属性</p>
+<p>​    - 实体：长方形，框内写实体名</p>
+<p>​    - 属性：椭圆形，<em>无向边</em>连接实体和属性(码：一个属性的时候，在属性名下划线；多个属性时，弧线连接<em>无向边</em>，在上面标注”\\“)</p>
+<p>​    - 联系：菱形表示实体间的联系，菱形框内写上联系名。用无向边把菱形分别于有关实体相连，在无向边旁标上联系的类型。若联系也具有属性，则属性和菱形也用无向边连接上。</p>
+<p>● E-R图联系</p>
+<p>​    - 同一个实体集内部个实体之间也可以存在1:1,1:n,m:n的联系</p>
+<p>​    - 三个或多个实体型间可能具有联系</p>
+<p>​    - 两个实体型之间可具有多种联系</p>
+<p>● E-R图实体之间联系的语义扩充</p>
+<p>存在依赖：</p>
+<p>​    - (职工)子女实体存在依赖于职工实体的存在，则称(职工)子女实体是弱实体</p>
+<p>标识依赖：</p>
+<p>​    - 如果实体不能由它自己的属性来唯一标识，而必须通过与它相联系的另一实体一起来标识，那么称该实体标识依赖于另一个实体(学校&amp;学生)</p>
+<p>实体的子集：</p>
+<p>​    - 子类可继承父类的属性，子类也可以附加某些属性</p>
+<p>​    - 子类之间的交不一定为空</p>
+<h4 id="数据模型之数据模型"><a href="#数据模型之数据模型" class="headerlink" title="数据模型之数据模型"></a>数据模型之数据模型</h4><p>● 数据模型是严格定义的概念集合。这些概念精确地描述系统中数据的静态特性、动态特性和完整性约束。</p>
+<p>● 数据模型三要素</p>
+<p>​    - 数据结构</p>
+<p>​    - 数据操作</p>
+<p>​    - 完整性约束</p>
+<h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><p>● 数据结构由描述数据对象以及对象之间关系的一组概念组成。包括：</p>
+<p>​    - 描述对象的类型、内容、性质的概念，如关系模型中的域、属性等</p>
+<p>​    - 描述对象之间联系的概念，如关系模型中的关系</p>
+<p>● 是数据静态特性的描述</p>
+<p>● 数据结构是刻画数据模型最重要的方面；通常按照数据结构的类型来命名数据模型</p>
+<h5 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h5><p>● 是对数据库中各种数据对象(型)的实例(值)允许执行的操作集合，包括操作及操作规则；</p>
+<p>● 定义操作的确切语义、操作符号、操作规则及操作语言；</p>
+<p>● 是数据动态特性的描述</p>
+<p>● 数据库主要由检索和更新(插、删、改)两大类操作</p>
+<h5 id="数据的约束条件"><a href="#数据的约束条件" class="headerlink" title="数据的约束条件"></a>数据的约束条件</h5><p>● 是完整性规则的集合。完整性规则是给定的数据模型中数据及其联系所有的制约和依存规则，用以保证数据的正确、相容(一致)</p>
+<p>● 完整约束条件包括：</p>
+<p>​    - 符合这种数据模型所必须遵守的基本的通用的完整性约束条件</p>
+<p>​    - 针对具体数据的特定语义约束条件</p>
+<h4 id="数据模型的分类"><a href="#数据模型的分类" class="headerlink" title="数据模型的分类"></a>数据模型的分类</h4><p>● 当前公认的基本数据模型有三类：层次模型、网状模型、关系模型</p>
+<p>● 各种数据模型之间的根本区别在于数据之间联系的表示方式不同：</p>
+<p>​    - 层次模型：用“树结构”表示数据之间的联系</p>
+<p>​    - 网状结构：用“图结构”表示数据之间的联系</p>
+<p>​    - 关系结构：用“二维表”表示和数据之间的联系</p>
+<h5 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h5><p>● 是数据库系统中最早出现的数据模型</p>
+<p>● 数据结构是有象树。节点代表实体型，连线表示两实体型间的一对多联系</p>
+<p>● 特征：</p>
+<p>​    - 有且仅有一个结点没有双亲</p>
+<p>​    - 其他结点有且仅有一个双亲</p>
+<p>● 优点：</p>
+<p>​    - 结构简单，易于实现</p>
+<p>● 缺点：</p>
+<p>​    - 支持的联系种类太少，只能直接表示二元一对多联系</p>
+<p>​    - 数据操纵不方便，子结点的存取只能通过父节点来进行</p>
+<p>●代表产品：</p>
+<p>​    - IBM的IMS数据库(1968)</p>
+<h5 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h5><p>● 数据结构是有向图。节点表示实体型，连线表示两实体型间的一对多联系</p>
+<p>● 特征：</p>
+<p>​    - 可有一个以上的结点没有双亲</p>
+<p>​    - 至少有一个结点有多于一个的双亲</p>
+<p>● 特点：</p>
+<p>​    - 表达的联系种类丰富</p>
+<p>​    - 结构复杂</p>
+<p>● 代表产品 —— DBTG系统：</p>
+<p>​    - 1969年，由美国CODASYL组织提出DBTG报告，确立了为网状数据库系统的概念、方法、技术</p>
+<h5 id="关系模型IBM开发的System"><a href="#关系模型IBM开发的System" class="headerlink" title="关系模型IBM开发的System"></a>关系模型IBM开发的System</h5><p>● 用二维表格结构(关系)表示实体及实体之间的联系</p>
+<p>● 特点：</p>
+<p>​    - 用关系描述实体及实体间的联系。这种描述一致性使数据结构大大简化，概念简单</p>
+<p>​    - 可直接表示多对多联系</p>
+<p>​    - 关系必须是规范化关系。即每个分类是不可分的数据项，或不许表中套表</p>
+<p>​    - 关系模型是建立在数学概念基础上，有较强的理论基础</p>
+<p>● 早期代表IBM开发的System R和加州大学Berkley分校开发的INGRES</p>
+<p>● 关系数据库产品：Oracle，MySQL、SQL Server等</p>
+<h4 id="数据独立性与数据共享"><a href="#数据独立性与数据共享" class="headerlink" title="数据独立性与数据共享"></a>数据独立性与数据共享</h4><p>● 数据独立性是指应用程序与数据结构之间相互独立的关系</p>
+<p>● 数据独立性的层次</p>
+<p>​    - 数据的物理独立性</p>
+<p>​    - 数据的逻辑独立性</p>
+<p>● 数据独立性使得数据库逻辑结构变化后，程序中使用数据结构不变</p>
+<p>​    - 即应用中使用的数据结构可以与数据库同一数据逻辑结构不同</p>
+<p>​    - 也即意味着数据库同一逻辑结构可以对应不同应用使用的多个数据结构</p>
+<p>​    - 从而使得数据库可以支持多种应用特定的数据表示和操作，从而实现数据共享</p>
+<p>● 数据独立性的实现方法：数据库多层次抽象，层次之间建立映射/对应关系</p>
+<h5 id="数据库系统的结构"><a href="#数据库系统的结构" class="headerlink" title="数据库系统的结构"></a>数据库系统的结构</h5><p>● 数据库系统体系结构上具有三级模式、两级映像的结构特征</p>
+<p>​    - 模式</p>
+<p>​    - 外模式</p>
+<p>​    - 内模式</p>
+<p>​    - 两级映像</p>
+<p><img src="C:\Users\Dell\rbkd_images\database-2-1.png" alt="database-2-1"></p>
+<p>● DBMS和DBA</p>
+<h6 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h6><p>● 也称为逻辑模式、概念模式，是数据库中全体数据的逻辑结构和特性的描述。是所有用户的公共数据视图；</p>
+<p>● 是三级模式的<em>核心</em>。不涉及数据物理存储细节，与具体的应用程序与编程语言无关；</p>
+<p>● 具体定义数据的逻辑结构(数据记录结构、数据之间的联系)、数据安全性、完整性要求；</p>
+<p>● 数据库系统提供模式描述语言(模式DDL，Data Description Language)进行模式定义。用模式DDL写出的一个数据逻辑定义的全部语句，称为某个数据库的模式。</p>
+<h6 id="外模式"><a href="#外模式" class="headerlink" title="外模式"></a>外模式</h6><p>● 也称为子模式或用户模式。是个别用户的数据视图，即与某一应用有关的数据的逻辑表示</p>
+<p>● 通常是模式的自己。不同应用的外模式可以相互覆盖，一个应用只能启用一个外模式；</p>
+<p>● 数据库系统提供外模式描述语言(外模式DDL)定义外模式。外模式DDL和用户选用的程序设计语言具有相融的语法。</p>
+<h6 id="内模式"><a href="#内模式" class="headerlink" title="内模式"></a>内模式</h6><p>● 也称为存储模式，是数据在数据库系统内部的表示，即对数据的物理结构和存储方式的描述；</p>
+<p>● 内模式通常用内模式数据描述语言(内模式DDL)来描述和定义</p>
+<h6 id="两级映像"><a href="#两级映像" class="headerlink" title="两级映像"></a>两级映像</h6><p>● 外模式/模式映像定义某个外模式与模式之间的对应关系。当模式改变时，外模式/模式映像做相应改变，可以保证外模式不变。(数据的逻辑独立性)</p>
+<p>● 模式/内模式映像定义数据逻辑结构与存储结构之间的对应关系。当内模式改变时，模式/内模式映像佐相应修改，使得模式保持不变。(数据的物理独立性)</p>
+<h6 id="三级模式结构优点"><a href="#三级模式结构优点" class="headerlink" title="三级模式结构优点"></a>三级模式结构优点</h6><p>● 保证数据的独立性</p>
+<p>​    - 模式与内模式分开——数据物理独立性</p>
+<p>​    - 外模式与模式分开——数据逻辑独立性</p>
+<p>● 简化用户接口，方便用户使用</p>
+<p>​    - 用户只按照外模式操作，无需了解数据库的总体逻辑结构与物理存储结构</p>
+<p>● 有利于数据共享</p>
+<p>​    - 从模式产生不同的外模式，外模式可相互覆盖</p>
+<p>● 有利于数据的安全保密</p>
+<p>​    - 应用程序只能操作其对应的外模式</p>
+<h5 id="DBMS主要功能"><a href="#DBMS主要功能" class="headerlink" title="DBMS主要功能"></a>DBMS主要功能</h5><p>● DBMS是数据库系统的核心软件，在操作系统支持下工作</p>
+<p>● 数据库定义功能</p>
+<p>​    - 提供DDL语言描述外模式、模式、内模式(源模式)</p>
+<p>​    - 模式翻译程序把源模式翻译成目标模式，存入数据字典中</p>
+<p>● 数据存取功能</p>
+<p>​    - 提供DML语言(Data manipulation language)对数据库进行检索、插入、修改、删除</p>
+<p>● 数据库运行管理</p>
+<p>​    - 并发控制、存取控制、完整性约束条件检查和执行，日志组织和管理，事务管理和自动恢复</p>
+<p>● 数据组织、存储和管理</p>
+<p>​    - 用户数据、索引、数据字典的组织、存储和管理，包括文件结构、存取方式、数据之间联系的实现等；</p>
+<p>● 数据库的建立和维护功能</p>
+<p>​    - 数据的装入、转换，数据库的转储、恢复、性能监视和分析等</p>
+<h5 id="DBMS的组成"><a href="#DBMS的组成" class="headerlink" title="DBMS的组成"></a>DBMS的组成</h5><p>● 语言编译处理程序</p>
+<p>● 系统运行控制程序</p>
+<p>​    - 包括系统总控、存取控制、并发控制、完整性控制、保密性控制、数据存取和更新、通信控制等程序</p>
+<p>● 系统建立和维护程序</p>
+<p>​    - 数据装入、数据库系统恢复、性能监督、工作日志等程序</p>
+<p>● 数据字典</p>
+<p>​    - 也称为数据目录或系统目录，由一系列表组成，存储着数据库中有关信息的当前描述，包括数据库的三级模式、用户名表、用户权限等信息</p>
+<h5 id="DBA"><a href="#DBA" class="headerlink" title="DBA"></a>DBA</h5><p>● 建库方面</p>
+<p>​    - 确定模式、外模式、存储结构、存取策略、负责数据的整理和装入</p>
+<p>● 用库方面</p>
+<p>​    - 定义完整性约束条件，规定数据的保密级别、用户权限，监督和控制数据库的远行情况，指定后援和恢复策略，负责故障恢复</p>
+<p>● 改进方面</p>
+<p>​    - 监督分析系统的性能(空间利用率，处理效率)</p>
+<p>​    - 数据库重组织，物理上重组织，以提高性能</p>
+<p>​    - 数据库重构造，设计上较大改动，模式和内模式修改</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>database-3</title>
+    <url>/2022/09/09/database-4/</url>
+    <content><![CDATA[<h1 id="关系数据模型"><a href="#关系数据模型" class="headerlink" title="关系数据模型"></a>关系数据模型</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="域"><a href="#域" class="headerlink" title="域"></a>域</h4><p>一组具有相同数据类型值的集合。如，整数、实数、{0,1}等</p>
+<h4 id="元组和分量"><a href="#元组和分量" class="headerlink" title="元组和分量"></a>元组和分量</h4><p>给定一组域$D_1,D_2,…,D_n$，这些域中可以有相同的。$D_1,D_2,…,D_n$的笛卡尔积为：</p>
+<script type="math/tex; mode=display">
+D_1 \times D_2 \times ... \times D_n = \{(d_1,d_2,...,d_n) | d_i \in D_i, i = 1,...,n\}</script><p>笛卡尔积的每个元素$(d_1,d_2,…,d_n)$称作一个n元祖或简称元组。元组的每一个分量$d_i$称作一个分量。</p>
+<h4 id="二维表"><a href="#二维表" class="headerlink" title="二维表"></a>二维表</h4><p>笛卡尔积可以表达为二维表</p>
+<script type="math/tex; mode=display">
+D_1 \times D_2 \times ... \times D_n = \{(d_1,d_2,...,d_n) | d_i \in D_i, i = 1,...,n\}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$D_1$</th>
+<th>$D_2$</th>
+<th>…</th>
+<th>$D_n$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$d_1$</td>
+<td>$d_2$</td>
+<td>…</td>
+<td>$d_n$</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="关系的定义"><a href="#关系的定义" class="headerlink" title="关系的定义"></a>关系的定义</h4><p>笛卡尔积$D_1 \times D_2 \times … \times D_n$的子集叫做在域$D_1,D_2,…,D_n$上的关系，用$R(D_1,D_2,…,D_n)$表示。</p>
+<p>R是关系的名字，n是关系的度或目(n = 1时称为单元关系，n = 2时称为二元关系)。</p>
+<p>关系可以表示为二维表：</p>
+<p>表的框架由$D_i(i=1,2,…,n)$构成</p>
+<p>表的每一行对应一个元组</p>
+<p>表的每一列对应一个域</p>
+<p>每个列附加一个名称，则每个列称为一个属性</p>
+<p>属性的名字是唯一的，属性$A_i$的取值范围$D_i(i = 1,2,…,n)$称为值域。n元关系必有n个属性。</p>
+<h4 id="关系的性质"><a href="#关系的性质" class="headerlink" title="关系的性质"></a>关系的性质</h4><p>列是同质的，即每一列中的分类来自一域，是同一类型的数据</p>
+<p>不同的列可出自同一域，每列必须有不同的属性名</p>
+<p>列的顺序无所谓，行的顺序无所谓</p>
+<p>任意两个元组不能完全相同</p>
+<p>每一分量必须是不可再分的数据，满足这一条件的关系称作满足第一范式(INF)的</p>
+<h4 id="数据结构：关系"><a href="#数据结构：关系" class="headerlink" title="数据结构：关系"></a>数据结构：关系</h4><p>实体及实体之间的联系均用单一的数据结构——“关系”来表示</p>
+<h4 id="码-Key-键"><a href="#码-Key-键" class="headerlink" title="码(Key,键)"></a>码(Key,键)</h4><p>候选码</p>
+<p>关系中的某一属性组，若它的值唯一地标识了一个元组，并具有最小值，则称该属性组为候选码</p>
+<p>主码</p>
+<p>若一个关系有多个候选码，则选定其中一个为主码</p>
+<p>主属性&amp;非主属性</p>
+<p>包含在候选码中的属性称为主属性，不包含在任何候选码中的属性称为非主属性</p>
+<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系的描述称作关系模式，他可以形式化地表示为：$R(U,D,dom,F,I)$</p>
+<p>U:组成该关系的属性名集合</p>
+<p>D:属性集U所来自的域</p>
+<p>dom：属性向域的映像集合</p>
+<p>F:属性间的数据依赖关系集合</p>
+<p>I:完整性约束集合</p>
+<p>关系模式通常可以简记作$R(A_1,A_2,…,A_n)$，R为关系名，$A_1,A_2,…,A_n$为属性名，D和Dom直接说明为属性为属性的类型、长度</p>
+<p>关系是关系模式在某一时刻的状态或内容，关系模式是相对稳定的，而关系是动态的，十岁时间不断变化的。</p>
+<h4 id="关系模型的语义约束"><a href="#关系模型的语义约束" class="headerlink" title="关系模型的语义约束"></a>关系模型的语义约束</h4><h5 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h5><p>要有属性或属性组合作为主码，主码值不可为空或部分为空。或定义为若属性A是关系R的主属性，则属性A不能取空值。</p>
+<p>空值的含义是：不知道或不存在的值</p>
+<h5 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h5><p>如果关系R的外部码$F_k$与关系S的主码相对应，则R中的每一个元组的$F_k$值或者等于S中某个元组的$P_k$值或者为空值。</p>
+<h6 id="外部码"><a href="#外部码" class="headerlink" title="外部码"></a>外部码</h6><p>设F是基本关系R的一个或一组属性，但不是R的码。如果F与基本关系S的主码$K_s$<em>相对应</em>，则称F是关系R的外部码，并称R为参照关系，S为被参照关系或目标关系。R和S不一定是不同的关系。</p>
+<p>目标关系S的主码$K_s$和参照关系的外部码F必须定义在同一个域上。</p>
+<h5 id="用户定义完整性"><a href="#用户定义完整性" class="headerlink" title="用户定义完整性"></a>用户定义完整性</h5><p>用户针对具体的应用环境定义的完整性约束条件</p>
+<h4 id="关系模型的数据操作"><a href="#关系模型的数据操作" class="headerlink" title="关系模型的数据操作"></a>关系模型的数据操作</h4><p>关系数据操作方式的特点是集合操作，“一次一集合”方式，操作的对象与结果都是集合。</p>
+<p>关系操作的基础是“关系运算”。关系运算方式有两种：</p>
+<p>代数方式(关系代数)</p>
+<p>逻辑方式(关系演算—&gt; 元组关系演算 + 域关系演算)</p>
+<p>三种关系运算相互等价，可转换。</p>
+<h4 id="关系数据库-关系数据库的型和值的概念"><a href="#关系数据库-关系数据库的型和值的概念" class="headerlink" title="关系数据库(关系数据库的型和值的概念)"></a>关系数据库(关系数据库的型和值的概念)</h4><p>关系模式的集合构成关系数据库模式——关系数据库的型</p>
+<p>关系的集合则构成具体的关系数据库——关系数据库的值</p>
+<h3 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>并、差、交、广义笛卡尔积 + 选择、投影、连接、自然连接、求商</p>
+<h3 id="元组关系演算与域关系演算"><a href="#元组关系演算与域关系演算" class="headerlink" title="元组关系演算与域关系演算"></a>元组关系演算与域关系演算</h3><h4 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h4><p>元组演算表达式的形式：${t | (t)}$</p>
+<h3 id="三类关系运算的安全约束及等价性"><a href="#三类关系运算的安全约束及等价性" class="headerlink" title="三类关系运算的安全约束及等价性"></a>三类关系运算的安全约束及等价性</h3><h3 id="关系数据语言概述"><a href="#关系数据语言概述" class="headerlink" title="关系数据语言概述"></a>关系数据语言概述</h3><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2>]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>formal-2</title>
+    <url>/2022/09/07/formal-2/</url>
+    <content><![CDATA[<h1 id="文法的形式定义"><a href="#文法的形式定义" class="headerlink" title="文法的形式定义"></a>文法的形式定义</h1><p>● $G = (V,T,P,S)$</p>
+<p>● 形式文法是生成符号语言的一种数学系统：</p>
+<p>用形式化的有穷描述手段描述符号语言的结构特征</p>
+<p>生成语言的所有句子</p>
+<p>判断所给符号串是否为语言句子，若不是，错在何处</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>● 形式文法(简称文法)表现为一个四元组$G = (V,T,P,S)$，其中，</p>
+<p>V:变元的非空有穷集；其中，每个语法变元代表一个语法范畴</p>
+<p>T:终极符的非空有穷集，$V \cap T = \emptyset$</p>
+<p>P:产生式的非空有穷集，P中元素一般形式为$\alpha \rightarrow \beta$，读作：</p>
+<p>​    $\alpha 定义为 \beta,或\alpha可以是\beta；$其中</p>
+<p>​    $\alpha \in {(V \cup T)}^+$，且$\alpha$中至少有V中一个元素</p>
+<p>​    $\beta \in {(V \cup T)}^*$</p>
+<p>S：$S \in V$，为开始符</p>
+<p>● 约定用法/习惯用法</p>
+<p>见PPT</p>
+<p>● 题目</p>
+<p>判断所给四元组是不是为合式文法，方法：</p>
+<p>​    按照定义对照四个元素是否相互符合</p>
+<h1 id="文法的派生；推导；规约"><a href="#文法的派生；推导；规约" class="headerlink" title="文法的派生；推导；规约"></a>文法的派生；推导；规约</h1><h2 id="直接派生"><a href="#直接派生" class="headerlink" title="直接派生"></a>直接派生</h2><p>设文法G = (V,T,P,S)，如果$\alpha \rightarrow \beta \in P, \phi,\omega \in {(V \cup T)}^*$ ，则称$\phi\alpha\omega$在G中直接派生(推导)出$\phi\beta\omega$，记为$\phi\alpha\beta \underset{G}{\Rightarrow} \phi\beta\omega$。</p>
+<p>相对应，也可称$\phi\beta\omega$在文法G中直接归约为$\phi\alpha\omega$；或$\beta$直接归约为$\alpha$</p>
+<h2 id="语言、句型、句子"><a href="#语言、句型、句子" class="headerlink" title="语言、句型、句子"></a>语言、句型、句子</h2><h1 id="文法的构造与等价性"><a href="#文法的构造与等价性" class="headerlink" title="文法的构造与等价性"></a>文法的构造与等价性</h1><h1 id="乔姆斯基的文法体系"><a href="#乔姆斯基的文法体系" class="headerlink" title="乔姆斯基的文法体系"></a>乔姆斯基的文法体系</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">21</span><br><span class="line">1 2 Co20ocvblT</span><br><span class="line">1 30 Al8QnWnkS7</span><br><span class="line">1 91 pqWY5UNcm4</span><br><span class="line">2 91  7 q6DlfOJGzf 82 48.5801</span><br><span class="line">2 30  8 0vyv58Ec49 25 12.1451</span><br><span class="line">2 30  56 OdcdRFEw7s 13 34.3745</span><br><span class="line">2 91  64 jMZ9uBOLy4 45 38.1122</span><br><span class="line">2 2  65 COIecJNdIH 89 41.7995</span><br><span class="line">2 2  26 UXDaKL9P1O 79 36.1887</span><br><span class="line">2 91  15 Vy6EKNgojP 10 35.5545</span><br><span class="line">3 91 7</span><br><span class="line">4 30 56 67</span><br><span class="line">5 91 15 true</span><br><span class="line">5 2 65 true</span><br><span class="line">6 2 65</span><br><span class="line">7 91 15</span><br><span class="line">8 2 26</span><br><span class="line">9 91 15</span><br><span class="line">10 2 65</span><br><span class="line">11 2</span><br><span class="line">12 2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>形式语言</tag>
       </tags>
   </entry>
   <entry>
@@ -477,130 +1041,6 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
       </tags>
   </entry>
   <entry>
-    <title>database-1-basic</title>
-    <url>/2022/08/30/database-1-basic/</url>
-    <content><![CDATA[<h1 id="数据管理技术的发展"><a href="#数据管理技术的发展" class="headerlink" title="数据管理技术的发展"></a>数据管理技术的发展</h1><p>——如何面对失败，把人分成了不同的样子</p>
-<h2 id="人工管理阶段"><a href="#人工管理阶段" class="headerlink" title="人工管理阶段"></a>人工管理阶段</h2><p>● 时间：20世纪50年代以前</p>
-<p>● 背景：</p>
-<p>​    - 外存仅磁带、卡片、纸带，没有磁盘等直接存取设备</p>
-<p>​    - 没有操作系统和数据管理软件，用户用机器指令编码</p>
-<p>​    - 计算机主要用于科学计算</p>
-<p>● 特点：</p>
-<p>​    - 数据不在计算机上保存</p>
-<p>​    - 没有软件系统对数据进行管理，程序规定数据的逻辑结构和物理结构，数据和程序不具有独立性</p>
-<p>​    - 基本没有文件概念，数据组织方式必须由程序员自行设计</p>
-<p>​    - 一组数据对应一个程序，数据是面向应用的，程序间不能共享数据</p>
-<h2 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h2><p>● 时间：20世纪50年代后期到60年代中期</p>
-<p>● 背景：</p>
-<p>​    - 外存出现磁盘、磁鼓等直接存取设备</p>
-<p>​    - 出现专门管理数据的软件，一般称为文件系统，包括在操作系统中</p>
-<p>​    - 计算机不但用于科学计算，还用于管理</p>
-<p>● 特点：</p>
-<p>​    - 数据以文件形式保留在外存上</p>
-<p>​    - 文件多样化</p>
-<p>​    - 数据的存取基本上以记录为单位</p>
-<p>​    - 程序和数据有<em>一定的</em>独立性（指物理独立，逻辑不独立）// mark一下，不理解欸</p>
-<p>​    - 文件和应用程序基本上是一一对应，数据共享性差，冗余度大</p>
-<p>● 问题：文件分散、相互独立，数据冗余度大，数据和程序缺乏独立性</p>
-<p>​    - 存储空间浪费</p>
-<p>​    - 容易造成数据的不一致性</p>
-<p>​    - 数据维护难度大</p>
-<p>​    - 程序维护工作量大</p>
-<h2 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h2><h3 id="时间-amp-背景"><a href="#时间-amp-背景" class="headerlink" title="时间&amp;背景"></a>时间&amp;背景</h3><p>● 时间：20世纪60年代后期开始</p>
-<p>● 背景：</p>
-<p>​    - 外存有了大容量磁盘、光盘</p>
-<p>​    - 计算机管理的数据量大，关系复杂，共享性要求强(多种应用、不同语言共享数据)</p>
-<p>​    - 软件价格上升，硬件价格下降，编制和维护软件及应用程序成本相对增加，其中维护的成本更高。</p>
-<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>● 突破文件系统分散管理的弱点，实现对数据的集中控制，统一管理</p>
-<h3 id="“集成”-amp-“共享”"><a href="#“集成”-amp-“共享”" class="headerlink" title="“集成”&amp;“共享”"></a>“集成”&amp;“共享”</h3><p>● 数据库中存储的数据是“集成的”和“共享的”：</p>
-<p>​    - “集成的”是指把特定应用环境中各种应用相关的数据及数据之间的联系全部地、集中地按照一定结构形式进行存储</p>
-<p>​    - “共享的”是指数据库中的数据可为多个不同的用户所共享</p>
-<h3 id="核心软件"><a href="#核心软件" class="headerlink" title="核心软件"></a>核心软件</h3><p>● 数据库管理系统DBMS</p>
-<p>​    - 最早的DBMS —— IMS，IDS</p>
-<h3 id="数据库技术要解决的基本问题"><a href="#数据库技术要解决的基本问题" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h3><p>​    - <em>集成</em>数据的表示</p>
-<p>​    - 统一管理下的数据<em>共享</em></p>
-<h3 id="解决基本问题的核心技术"><a href="#解决基本问题的核心技术" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h3><p>​    - 数据模型</p>
-<p>​    - 数据独立性 —&gt; 共享</p>
-<h3 id="数据库系统数据管理特点"><a href="#数据库系统数据管理特点" class="headerlink" title="数据库系统数据管理特点"></a>数据库系统数据管理特点</h3><h4 id="面向全组织的复杂的数据结构"><a href="#面向全组织的复杂的数据结构" class="headerlink" title="面向全组织的复杂的数据结构"></a>面向全组织的复杂的数据结构</h4><p>● 在描述数据时，不仅描述数据本身，还要描述数据之间的联系，使整个组织的数据结构化</p>
-<p>● 数据结构化是数据库的主要特征之一，是数据库和文件系统的<em>根本</em>区别。</p>
-<h4 id="数据冗余度小，易扩充"><a href="#数据冗余度小，易扩充" class="headerlink" title="数据冗余度小，易扩充"></a>数据冗余度小，易扩充</h4><p>● 数据库从整体观点描述数据。数据不再面向某个应用，而是面向整个系统，从而大大减小数据的冗余度；</p>
-<p>● 数据库数据的应用可以有很灵活的方式，可以取整体数据的各种合理子集用于不同的应用系统，并可以根据应用需求的变化，重新选取不同子集。</p>
-<h4 id="具有较高的数据和程序的独立性"><a href="#具有较高的数据和程序的独立性" class="headerlink" title="具有较高的数据和程序的独立性"></a>具有较高的数据和程序的独立性</h4><p>● 数据独立性：</p>
-<p>​    - 数据的物理独立性：数据的存储结构(物理结构)改变时，数据的逻辑结构可以不变，从而应用程序也不必改变</p>
-<p>​    - 数据的逻辑独立性：数据的逻辑结构改变时，应用程序可以不变</p>
-<p>● how？—&gt;  数据库提供了两方面的映像(转换)功能：</p>
-<p>​    - 数据的存储结构与逻辑结构之间的映像——实现数据的物理独立性</p>
-<p>​    - 数据的全局逻辑结构——实现数据的逻辑独立性</p>
-<!--依我之见，这个映像功能其实就是添加了中间层(接口)-->
-<p><img src="C:\Users\Dell\rbkd_images\database-1-1.png" alt="database-1-1"></p>
-<h4 id="统一的数据控制功能"><a href="#统一的数据控制功能" class="headerlink" title="统一的数据控制功能"></a>统一的数据控制功能</h4><p>● 数据的安全性控制：</p>
-<p>​    - 保护数据以防止不合法的使用所造成数据的泄密和破坏</p>
-<p>● 数据的完整性控制：</p>
-<p>​    - 指数据的正确性和相容性(一致性)</p>
-<p>● 并发控制：</p>
-<p>​    - 对多用户的并发操作进行控制、协调，保护数据的完整性</p>
-<p>● 数据库恢复</p>
-<p>​    - 将数据库从错误状态恢复到某一已知的正确状态</p>
-<h4 id="数据的最小存取单位是数据项"><a href="#数据的最小存取单位是数据项" class="headerlink" title="数据的最小存取单位是数据项"></a>数据的最小存取单位是数据项</h4><p>● 既可以存取一个或一组记录，也可以存取数据库中一个或一组数据项</p>
-<h3 id="数据库基本问题与关键技术"><a href="#数据库基本问题与关键技术" class="headerlink" title="数据库基本问题与关键技术"></a>数据库基本问题与关键技术</h3><h4 id="数据库技术要解决的基本问题-1"><a href="#数据库技术要解决的基本问题-1" class="headerlink" title="数据库技术要解决的基本问题"></a>数据库技术要解决的基本问题</h4><h5 id="集成数据的表示"><a href="#集成数据的表示" class="headerlink" title="集成数据的表示"></a>集成数据的表示</h5><h5 id="统一管理下的数据共享"><a href="#统一管理下的数据共享" class="headerlink" title="统一管理下的数据共享"></a>统一管理下的数据共享</h5><h4 id="解决基本问题的核心技术-1"><a href="#解决基本问题的核心技术-1" class="headerlink" title="解决基本问题的核心技术"></a>解决基本问题的核心技术</h4><h5 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h5><p>● 数据模型用来抽象和表示现实世界中的数据和信息：</p>
-<p>​    - 描述对象</p>
-<p>​    - 描述与表示的目标</p>
-<p>● 数据模型的层次</p>
-<script type="math/tex; mode=display">
-现实世界业务(业务数据)\\
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\Downarrow}数据的认识、抽象\\
-信息世界信息(概念模型,用于信息世界建模，是现实世界到信息世界的抽象，是用户和数据库设计人员进行交流的语言)\\
-\Downarrow转换\\
-机器世界数据(数据模型,用于机器世界，按计算机系统的观点对数据建模)</script><p>● 在数据库中，根据模型应用的不同目的，将模型分为两类或两个层次：</p>
-<p>概念模型(也称信息模型)</p>
-<p>数据模型(如层次、网状、关系模型)</p>
-<h5 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h5><p>● 概念模型基于信息世界的主要概念，表达应用中的各种语义(信息)</p>
-<p>● 具有较强的语义表达能力，能够方便、直接表达应用中的各种语义</p>
-<p>● 应该简单、清晰、易于理解</p>
-<p>● 最常用表示方法：实体——联系方法(E-R法)</p>
-<h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><p>● 实体(Entity)：客观存在并可相互区分的事物</p>
-<p>● 属性(Attribute)：实体所具有的某一属性</p>
-<p>● 码(Key)：唯一标识实体的属性集</p>
-<p>● 域(Domain)：某个(些)属性的取值范围</p>
-<p>● 实体型(Entity Type)：表示一类实体，用实体名及其属性名集合来抽象、刻画</p>
-<p>● 联系(Relation)：实体型之间的联系，是实体之间的相互关联</p>
-<p>​    - 名称</p>
-<p>​    - 类型：</p>
-<p>​        ◇ 一对一联系(1:1)</p>
-<p>​        ◇ 一对多联系(1:n)</p>
-<p>​        ◇ 多对多联系(m:n)</p>
-<p>​    - 可以具有属性</p>
-<h6 id="E-R法"><a href="#E-R法" class="headerlink" title="E-R法"></a>E-R法</h6><p>● 概述</p>
-<p>思想：</p>
-<p>​    - 用E-R图描述现实世界的信息，这种信息结构称为概念结构，然后根据具体系统的要求将概念结构转换成特定系统所能接受的逻辑结构(层次、网状、关系)</p>
-<p>操作步骤：</p>
-<p>​    - 用E-R图描述现实世界；</p>
-<p>​    - 将E-R图转换成相应的数据模型</p>
-<p>● E-R图的组成：实体、联系、属性</p>
-<p>​    - 实体：长方形，框内写实体名</p>
-<p>​    - 属性：椭圆形，<em>无向边</em>连接实体和属性(码：一个属性的时候，在属性名下划线；多个属性时，弧线连接<em>无向边</em>，在上面标注”\\“)</p>
-<p>​    - 联系：菱形表示实体间的联系，菱形框内写上联系名。用无向边把菱形分别于有关实体相连，在无向边旁标上联系的类型。若联系也具有属性，则属性和菱形也用无向边连接上。</p>
-<p>● E-R图联系</p>
-<p>​    - 同一个实体集内部个实体之间也可以存在1:1,1:n,m:n的联系</p>
-<p>​    - 三个或多个实体型间可能具有联系</p>
-<p>​    - 两个实体型之间可具有多种联系</p>
-<p>● E-R图实体之间联系的语义扩充</p>
-<p>存在依赖：</p>
-<p>​    - (职工)子女实体存在依赖于职工实体的存在，则称(职工)子女实体是弱实体</p>
-<p>标识依赖：</p>
-<p>​    - 如果实体不能由它自己的属性来唯一标识，而必须通过与它相联系的另一实体一起来标识，那么称该实体标识依赖于另一个实体(学校&amp;学生)</p>
-<p>实体的子集：</p>
-<p>​    - 子类可继承父类的属性，子类也可以附加某些属性</p>
-<p>​    - 子类之间的交不一定为空</p>
-<h5 id="数据独立性"><a href="#数据独立性" class="headerlink" title="数据独立性"></a>数据独立性</h5>]]></content>
-      <categories>
-        <category>cs</category>
-      </categories>
-      <tags>
-        <tag>数据库系统原理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>optimization</title>
     <url>/2022/09/01/optimization-1/</url>
     <content><![CDATA[<h1 id="线性规划基本原理与基本算法"><a href="#线性规划基本原理与基本算法" class="headerlink" title="线性规划基本原理与基本算法"></a>线性规划基本原理与基本算法</h1><h2 id="最优化方法的基本模型"><a href="#最优化方法的基本模型" class="headerlink" title="最优化方法的基本模型"></a>最优化方法的基本模型</h2><h3 id="最优化问题的思路"><a href="#最优化问题的思路" class="headerlink" title="最优化问题的思路"></a>最优化问题的思路</h3><p>● 可能的决策方案</p>
@@ -637,6 +1077,57 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
       </tags>
   </entry>
   <entry>
+    <title>博客搭建指南</title>
+    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
+<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
+<p>这样就可以大概搭建出一个博客的雏形了。</p>
+]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>日常知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>optimization</title>
+    <url>/2022/09/08/optimization-2/</url>
+    <content><![CDATA[<h1 id="等式形式的线性规划模型"><a href="#等式形式的线性规划模型" class="headerlink" title="等式形式的线性规划模型"></a>等式形式的线性规划模型</h1><h2 id="两个要求"><a href="#两个要求" class="headerlink" title="两个要求"></a>两个要求</h2><p>所有约束为等式，具有非负右端项</p>
+<p>所有变量非负</p>
+<h2 id="不等式转换方法"><a href="#不等式转换方法" class="headerlink" title="不等式转换方法"></a>不等式转换方法</h2><p>把 $\le$ 约束转换成等式约束：在等式左端，<em>增加</em>非负松弛变量</p>
+<p>把 $\ge$ 约束转换成等式约束：在等式左端，减去非负剩余变量</p>
+<p>必要时，在得到等式两边乘-1保证右边非负</p>
+<h1 id="图形解与代数解转换"><a href="#图形解与代数解转换" class="headerlink" title="图形解与代数解转换"></a>图形解与代数解转换</h1><script type="math/tex; mode=display">
+图解法思路：解空间\rightarrow角点\rightarrow最优点\\
+\Downarrow  类比\\
+代数法思路：可行解\rightarrow基本可行解\rightarrow最优解</script><h2 id="理论支持-角点的代数定义"><a href="#理论支持-角点的代数定义" class="headerlink" title="理论支持:角点的代数定义"></a>理论支持:角点的代数定义</h2><p>在m*n阶的方程组中，如果令(n-m)个变量等于0，然后求解其余的含m个变量的m个方程，如果有唯一解，则称相应的解为基本解，它一定对应解空间的一个(可行或不可信)角点。这意味着角点的最大数目是</p>
+<script type="math/tex; mode=display">
+C_n^m = \frac{n!}{m!(n-m)!}</script><p>我们把(n-m)个变量称为非基变量，余下的m个变量称为基变量，它们的解称为基本解</p>
+<p>m和n的的数量增加后，枚举的计算量骤增，但是现实中m和n往往较大</p>
+<h1 id="单纯性方法"><a href="#单纯性方法" class="headerlink" title="单纯性方法"></a>单纯性方法</h1><p>智能、有效、不用枚举</p>
+<p>how操作？</p>
+<p>1.设定目标变量的定义中出现的变量为非基变量，其他变量为基变量(这样做比较方便，但是不这样做好像也没说不行)；</p>
+<p>​    列表，第一列为目标变量和基，中间n+1列为所有变量+目标变量在题目所给n+1方程中的系数，最后一列为第一列在当前情况的值</p>
+<p>2.选择目标变量定义中最正系数的变量作为进基变量</p>
+<p>3.单纯形表中确定离基变量：计算方程的解列与相应的进基变量下方的约束系数的非负比。</p>
+<p>其中，拥有最小非负比的基变量为离基变量。</p>
+<p>4.在确定进基变量和离基变量后我们就确定了一个枢轴行(离基变量所在行)和一个枢轴列（进基变量所在列）和一个数周元素(枢轴行和枢轴列的交点)，以此为基础开始后面的变化。</p>
+<p>5.在基列中，以进基变量代替离基变量；新的枢轴行 = 当前枢轴行 / 枢轴元素</p>
+<p>6.其他行 = 当前行 - 当前行枢轴列的系数*新的枢轴行</p>
+<p>7.重复以上步骤直到目标变量的表达式中变量系数都为负</p>
+<p><em>注意：在求最大值和最小值时，选择进基变量和判断终止的条件相反，但是选择离基变量的条件相同</em></p>
+<p><em>也就是说，在求最大值时，选择进基变量时以目标变量表达式中系数为正最大的优先，当所有系数为负时结束；在求最小值时，选择进基变量时以目标变量表达式中系数为负最小的优先(实则是绝对值最大)，当所有系数为正时，结束；</em></p>
+<p><em>但是选择离基变量时，都是选择最小非负比的基变量</em></p>
+<h1 id="改进单纯性方法"><a href="#改进单纯性方法" class="headerlink" title="改进单纯性方法"></a>改进单纯性方法</h1><h1 id="单纯性方法的特殊情况"><a href="#单纯性方法的特殊情况" class="headerlink" title="单纯性方法的特殊情况"></a>单纯性方法的特殊情况</h1>]]></content>
+      <categories>
+        <category>cs</category>
+      </categories>
+      <tags>
+        <tag>最优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大三上各门学科考核要求</title>
     <url>/2022/08/30/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%90%84%E9%97%A8%E5%AD%A6%E7%A7%91%E8%80%83%E6%A0%B8%E8%A6%81%E6%B1%82/</url>
     <content><![CDATA[<h1 id="数据库管理系统原理"><a href="#数据库管理系统原理" class="headerlink" title="数据库管理系统原理"></a>数据库管理系统原理</h1><p>• 考核方式 </p>
@@ -663,47 +1154,36 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
 <p>​    – 主动回答问题，每次奖励0.5分，5分封顶（考前公布） </p>
 <p>实践部分(2学分)：</p>
 <p>​    - 上机实践（50机时），占比40% – 12月底检查作业</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p> (30%) 四次课程作业 </p>
+<p>​    - 选取四次课程作业中成绩最高的三次计入平时成绩</p>
+<p>​    - 每次课程作业有两周时间来完成，第一次作业将于9月13号发布</p>
+<p>​    - 每次作业提交截止后会发布参考答案，不接受补交作业 </p>
+<p>(10%) MOOC测试</p>
+<p>​    - 包含12次单元测试与一次期末测试</p>
+<p>​    - 每次单元测试包含10道选择题</p>
+<p>​    - 期末测试包含20道选择题/判断题</p>
+<p>​    - MOOC注册用户名：BH23<em>ID_Name (例：BH23_17375097</em>张文浩) </p>
+<p>(60%) 期末考试 </p>
+<p>​    - 包含整学期的学习内容</p>
+<p>另：</p>
+<p>补充练习 </p>
+<p>​    - 这一学期会提供12次补充练习 </p>
+<p>​    - 包含更多课上讲解内容的示例 </p>
+<p>​    - 第一次补充练习将在下周发布</p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p>• 课堂表现，20分 </p>
+<p>• 大作业，80分 </p>
+<p>​    - &lt;=4人 </p>
+<p>​    - 答辩 </p>
+<p>​    - 成员共享分数 </p>
+<p>​    - 开发文档，20分 </p>
+<p>​    - 用户手册，10分 </p>
+<p>​    - APP设计，50分</p>
+<h1 id="c"><a href="#c" class="headerlink" title="c++"></a>c++</h1><p>10%</p>
+<p>90%</p>
 ]]></content>
       <categories>
         <category>cs</category>
       </categories>
-  </entry>
-  <entry>
-    <title>博客搭建指南</title>
-    <url>/2022/08/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>近几日，搭建了自己的博客，简记一下过程。</p>
-<p>主要是参考了<a href="https://mp.weixin.qq.com/s/3li0n8REcU1DviwWiEYw_A">超全面！如何用 GitHub 从零开始搭建一个博客 ？ (qq.com)</a>，之后需要注意的是：1.仓库名字要和自己的github用户名保持一致；2.github&amp;settings中emails选项的private要记得勾掉。</p>
-<p>这样就可以大概搭建出一个博客的雏形了。</p>
-]]></content>
-      <categories>
-        <category>cs</category>
-      </categories>
-      <tags>
-        <tag>日常知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大三上学习规划</title>
-    <url>/2022/08/26/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<p>—人的一生之精彩，在于自己追逐梦想的过程，不必苛求旁人的不失望或者喜欢。走自己的路，让旁人失望和不喜欢去吧！</p>
-<p>在上一篇博客里，我对自己的思想问题进行了一个回顾和总结，在本篇博客里，我准备对大三上的学习进行前瞻和计划。</p>
-<p>首先是学校课程，大三上有三门核心专业课、五门一般专业课(待抽签)、一门一般通识课和一门体育课。由于对于具体的课程要求不清楚，所以我在这只做具体的要求：</p>
-<p>认真听课，不要摸鱼开车，上课的知识很重要；</p>
-<p>认真完成作业，不要像上学期的概统一样；</p>
-<p>及时回顾复习，上过一门课之后要把当堂的重点归纳总结，既是对本堂课内容的复习，也是为自己日后复习积累资料。</p>
-<p>我相信，无论是哪门课，只要我做到这些点，一定可以学好这门课的知识、得到一个不错的成绩。</p>
-<p>接下来是自己的其他规划，由于大三上应该会很忙，所以我主要以学校的课程为主，除了课程之外的要求暂时只想到两点：</p>
-<p>c++语言在十二月之前提升到一个可观的水平，刷ccf csp的题目，争取在十二月的考试中获得300分以上的成绩。</p>
-<p>体育锻炼，一小时锻炼方案：三公里+拉伸+俯卧撑+拉伸；四十分钟锻炼方案：俯卧撑+拉伸；七十五分钟锻炼方案：四公里+拉伸+俯卧撑+拉伸。根据时间多少对俯卧撑数目进行加减、适当增加卷腹。</p>
-<p>大体的方案就是这样，更具体的实施办法等到实施的时候会进一步完善</p>
-<p>—(σﾟ∀ﾟ)σ..:*☆哎哟不错哦</p>
-]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>学习计划</tag>
-      </tags>
   </entry>
   <entry>
     <title>实迷途其未远</title>
@@ -729,6 +1209,29 @@ L_2:最短010，稍长0010,0110,0100</script><p>​    很容易就可以发现�
       </categories>
       <tags>
         <tag>生活感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大三上学习规划</title>
+    <url>/2022/08/26/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<p>—人的一生之精彩，在于自己追逐梦想的过程，不必苛求旁人的不失望或者喜欢。走自己的路，让旁人失望和不喜欢去吧！</p>
+<p>在上一篇博客里，我对自己的思想问题进行了一个回顾和总结，在本篇博客里，我准备对大三上的学习进行前瞻和计划。</p>
+<p>首先是学校课程，大三上有三门核心专业课、五门一般专业课(待抽签)、一门一般通识课和一门体育课。由于对于具体的课程要求不清楚，所以我在这只做具体的要求：</p>
+<p>认真听课，不要摸鱼开车，上课的知识很重要；</p>
+<p>认真完成作业，不要像上学期的概统一样；</p>
+<p>及时回顾复习，上过一门课之后要把当堂的重点归纳总结，既是对本堂课内容的复习，也是为自己日后复习积累资料。</p>
+<p>我相信，无论是哪门课，只要我做到这些点，一定可以学好这门课的知识、得到一个不错的成绩。</p>
+<p>接下来是自己的其他规划，由于大三上应该会很忙，所以我主要以学校的课程为主，除了课程之外的要求暂时只想到两点：</p>
+<p>c++语言在十二月之前提升到一个可观的水平，刷ccf csp的题目，争取在十二月的考试中获得300分以上的成绩。</p>
+<p>体育锻炼，一小时锻炼方案：三公里+拉伸+俯卧撑+拉伸；四十分钟锻炼方案：俯卧撑+拉伸；七十五分钟锻炼方案：四公里+拉伸+俯卧撑+拉伸。根据时间多少对俯卧撑数目进行加减、适当增加卷腹。</p>
+<p>大体的方案就是这样，更具体的实施办法等到实施的时候会进一步完善</p>
+<p>—(σﾟ∀ﾟ)σ..:*☆哎哟不错哦</p>
+]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>学习计划</tag>
       </tags>
   </entry>
 </search>
